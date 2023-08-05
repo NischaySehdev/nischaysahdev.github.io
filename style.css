@@ -73,7 +73,7 @@ a{
 .description{
     display: grid;
     margin-left: 15vw;
-    margin-right: 15vw;
+    margin-right: 12vw;
     row-gap: 1.5vh;
     font-weight: 900;
     font-family: 'IBM Plex Mono', monospace;
@@ -133,7 +133,7 @@ a{
     margin-left: 20vw;
     margin-top: 30vh;
     width: 60%;
-    grid-template-rows: auto auto;
+    /* grid-template-rows: auto auto; */
     color: #d1d4d6;
 }
 .subheading{
@@ -150,10 +150,11 @@ a{
     
 }
 .contents{
-    display: grid;
-    grid-template-columns: auto 40%;
+    /* display: grid; */
+    /* grid-template-columns: auto 40%; */
 }
 #content {
+    margin-top: 2vh;
     text-align: justify;
     font-size: 1rem;
     line-height: 1.5;
@@ -165,7 +166,8 @@ a{
     margin-top: 1vh;
     grid-template-columns: auto auto;
     justify-self: center;
-    width: 5vw;
+    width: 10vw;
+    font-size: 1.5rem;
 }
 #organization-button-previous:hover{
     cursor: grab;
@@ -188,12 +190,11 @@ a{
     font-size: 1rem;
 }
 #photo {
-    padding-top: 2vh;
     text-align: center;
 }
 
 .photo{
-    height: 40vh;
+    height: 30vh;
     background-color: rgb(238, 238, 238);
 }
 .projectsTable {
@@ -368,7 +369,9 @@ footer{
     text-shadow: 1px 1px 2px #427388;
 }
 
-
+#projectTable:hover{
+    cursor: pointer;
+}
 
 
 
