@@ -1,4 +1,5 @@
 const customerManagementSystemLink = "https://github.com/NischaySehdev/CustomerManagementSystem";
+const universityManagementSystemLink = "https://github.com/NischaySehdev/UniversityManagementSystem";
 const aboutMePageContent = document.getElementById("aboutMePageContent");
 const myPhoto = document.getElementById("photo");
 const aboutMePageTitle = document.getElementById("aboutMePageTitle");
@@ -40,19 +41,19 @@ document.getElementById("customerManagementSystem").addEventListener("click", ()
     window.location.href = customerManagementSystemLink;
 })  
 document.getElementById("universityManagementSystem").addEventListener("click", ()=>{
-    window.location.href = customerManagementSystemLink;
+    window.location.href = universityManagementSystemLink;
 })  
 document.getElementById("ignouAnOfficialApplication").addEventListener("click", ()=>{
-    window.location.href = customerManagementSystemLink;
+    // window.location.href = customerManagementSystemLink;
 })  
 document.getElementById("messenger").addEventListener("click", ()=>{
-    window.location.href = customerManagementSystemLink;
+    // window.location.href = customerManagementSystemLink;
 })  
 document.getElementById("movieCatalog").addEventListener("click", ()=>{
-    window.location.href = customerManagementSystemLink;
+    // window.location.href = customerManagementSystemLink;
 })  
 document.getElementById("keepClone").addEventListener("click", ()=>{
-    window.location.href = customerManagementSystemLink;
+    // window.location.href = customerManagementSystemLink;
 })  
 
 // Responsiveness -- Ipad mini
