@@ -9,7 +9,7 @@ html {
     scroll-behavior: smooth;
     margin: 0%;
     padding: 0%;
-    width: 100VW;
+    width: 100vw;
 } 
 
 
@@ -26,7 +26,7 @@ header{
     margin-left: 0%;
 }
 nav {
-    margin-top: 5vh;
+    margin-top: 2vh;
     position: sticky;
     text-align: right;
 }
@@ -54,11 +54,116 @@ a{
     text-decoration: none;
     color: #d1d4d6;
 }
+dialog {
+	padding: 1rem 3rem;
+	background: white;
+	max-width: 400px;
+	padding-top: 2rem;
+	border-radius: 20px;
+	border: 0;
+    margin-left: 35vw;
+    margin-top: 35vh;
+	box-shadow: 0 5px 30px 0 rgb(0 0 0 / 10%);
+	animation: fadeIn 1s ease both;
+	&::backdrop {
+		animation: fadeIn 1s ease both;
+		background: rgba(11, 17, 48, 0.4);
+		z-index: 2;
+		backdrop-filter: blur(5px);
+	}
+	.x {
+		filter: grayscale(1);
+		border: none;
+		background: none;
+		position: absolute;
+		top: 15px;
+		right: 10px;
+		transition: ease filter, transform 0.3s;
+		cursor: pointer;
+		transform-origin: center;
+		&:hover {
+			filter: grayscale(-1);
+			transform: scale(1.1);
+		}
+	}
+	h2 {
+		font-weight: 600;
+		font-size: 2rem;
+		padding-bottom: 1rem;
+	}
+	p {
+		font-size: 1rem;
+		line-height: 1.3rem;
+		padding: 0.5rem 0;
+		a {
+			&:visited {
+				color: rgb(var(--vs-primary));
+			}
+		}
+	}
+}
+
+.blur{
+    filter: blur(20px);
+}
+
+.unblur{
+    filter: blur(-5px);
+    background-color: pink;
+}
+#navbar {
+	padding: 1rem 3rem;
+	background: white;
+	max-width: 400px;
+	padding-top: 2rem;
+	border-radius: 20px;
+	border: 0;
+    margin-left: 35vw;
+    margin-top: 35vh;
+	box-shadow: 0 5px 30px 0 rgb(0 0 0 / 10%);
+	animation: fadeIn 1s ease both;
+	&::backdrop {
+		animation: fadeIn 1s ease both;
+		background: rgba(11, 17, 48, 0.4);
+		z-index: 2;
+		backdrop-filter: blur(5px);
+	}
+	.x {
+		filter: grayscale(1);
+		border: none;
+		background: none;
+		position: absolute;
+		top: 15px;
+		right: 10px;
+		transition: ease filter, transform 0.3s;
+		cursor: pointer;
+		transform-origin: center;
+		&:hover {
+			filter: grayscale(-1);
+			transform: scale(1.1);
+		}
+	}
+	h2 {
+		font-weight: 600;
+		font-size: 2rem;
+		padding-bottom: 1rem;
+	}
+	p {
+		font-size: 1rem;
+		line-height: 1.3rem;
+		padding: 0.5rem 0;
+		a {
+			&:visited {
+				color: rgb(var(--vs-primary));
+			}
+		}
+	}
+}
 #frontPage {
     display: grid; 
     margin-top: 20vh;
     color: white;
-    width: 100%;
+    width: 90%;
     font-family: 'Rammetto', serif;
     line-height: 1.5;
 }
@@ -133,7 +238,6 @@ a{
     margin-left: 20vw;
     margin-top: 30vh;
     width: 60%;
-    /* grid-template-rows: auto auto; */
     color: #d1d4d6;
 }
 .subheading{
@@ -147,7 +251,6 @@ a{
     font-size: 1.5rem;
     margin-bottom: 1vh;
     font-weight: 1000;
-    
 }
 .contents{
     /* display: grid; */
@@ -170,7 +273,7 @@ a{
     font-size: 1.5rem;
 }
 #organization-button-previous:hover{
-    cursor: grab;
+    cursor: pointer;
     color: white;
 }
 
@@ -180,7 +283,7 @@ a{
 }
 
 #organization-button-next:hover{
-    cursor: grab;
+    cursor: pointer;
     color: white;
 }
 
@@ -227,6 +330,12 @@ a{
 .tech{
     display: inline;
     font-size: .8rem;
+    padding-top: .1vh;
+    padding-bottom: .1vh;
+    padding-left: .4vh;
+    padding-right: .4vh;
+    font-weight: 800;
+    color:rgb(186, 180, 180)
 }
 
 .loadbutton{
@@ -272,7 +381,7 @@ a{
     justify-self: center;
     text-align: center;
     color: white;
-    font-size: larger;
+    font-size: 1.75rem;
     letter-spacing: 2px;
     width: 70%;
 }
@@ -333,7 +442,7 @@ footer{
 }
 
 .projectDescription {
-    text-align: left;
+    text-align: justify;
     font-size: 0.95rem;
 }
 
@@ -421,6 +530,11 @@ footer{
     box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
     outline-color: rgba(255, 255, 255, 0);
     outline-offset: 15px;
+}
+
+#responsiveNavbar{
+    height: 35px;
+    width: 35px;
 }
 
 
