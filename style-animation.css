@@ -2936,7 +2936,7 @@
     .TwoRowGrid {
         display: grid;
         margin-left: 5vw;
-        margin-top: 200px;
+        margin-top: 50vh;
         width: 90%;
         color: #d1d4d6;
     }
@@ -3019,6 +3019,7 @@
         color: white;
         display: grid;
         width: 100%;
+        justify-content: center;
         justify-self: center;
         margin-bottom: 1vh;
         font-size: 8px;
@@ -3164,7 +3165,7 @@
     .TwoRowGrid {
         display: grid;
         margin-left: 5vw;
-        margin-top: 45vh;
+        margin-top: 50vh;
         width: 90%;
         color: #d1d4d6;
     }

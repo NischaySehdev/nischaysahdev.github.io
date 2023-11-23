@@ -537,4 +537,7 @@ footer{
     width: 35px;
 }
 
+.projectScroll{
+    overflow-y: scroll;
+}
 
