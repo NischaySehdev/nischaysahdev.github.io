@@ -227,14 +227,17 @@ document.getElementById("responsiveNavbar").addEventListener("click",()=>{
         resumeLink.style.marginTop = "2vh"
         resumeLink.style.fontSize = "1rem"
         socialLinks[0] = document.createElement("li");
+        let anchorTag = document.createElement("a");
+        anchorTag.innerHTML = "LinkedIn";
+        anchorTag.href = linkedInLink;
+        socialLinks[0].appendChild(anchorTag);
         socialLinks[0].style.fontSize = "1.0rem";
         socialLinks[0].style.color = "#51c0a4";
         socialLinks[0].style.display = "block";
         socialLinks[0].style.float="left";
         socialLinks[0].style.marginTop = "10vh";
         socialLinks[0].style.marginLeft = "21px";
-        socialLinks[0].innerText = "LinkedIn"
-        socialLinks[0].href = linkedInLink;
+        console.log(socialLinks[0]);
         socialLinks[1] = document.createElement("li");
         socialLinks[1].style.fontSize = "1.0rem";
         socialLinks[1].style.color = "#51c0a4";
