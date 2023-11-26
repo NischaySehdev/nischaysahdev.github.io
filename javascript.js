@@ -3,6 +3,12 @@ const universityManagementSystemLink = "https://github.com/NischaySehdev/Univers
 const aboutMePageContent = document.getElementById("aboutMePageContent");
 const myPhoto = document.getElementById("photo");
 const aboutMePageTitle = document.getElementById("aboutMePageTitle");
+const githubLink = "https://github.com/NischaySehdev";
+const facebookLink = "https://www.facebook.com/nischay.sehdev";
+const instagramLink = "https://www.instagram.com/nischay_sehdev/";
+const linkedInLink = "https://www.linkedin.com/in/nischay-sehdev";
+const twitterLink = "https://twitter.com/SehdevNischay"; 
+let isNavBarShow = false;
 let aboutMePageContainer = document.getElementById("aboutMePage");
 let topMargin = calculateMargin();
 let jobDescription = "";
@@ -164,7 +170,7 @@ function clickOnNavbar() {
 }
 document.getElementById("responsiveNavbar").addEventListener("click",()=>{
     let navbarContainer = document.getElementById("navbarContainer");
-    if(navbarContainer.style.height != "420px"){
+    if(!isNavBarShow){
         document.getElementsByClassName("description")[0].setAttribute("class", "blur description");
         document.getElementsByClassName("TwoRowGrid")[0].setAttribute("class", "blur TwoRowGrid");
         document.getElementsByClassName("TwoRowGrid")[1].setAttribute("class", "blur TwoRowGrid");
@@ -172,14 +178,12 @@ document.getElementById("responsiveNavbar").addEventListener("click",()=>{
         document.getElementsByClassName("loadbutton")[0].setAttribute("class", "blur loadbutton");
         document.getElementsByClassName("FourRowGrid")[0].setAttribute("class", "blur FourRowGrid");
         navbarContainer.style.visibility = "visible"
-        navbarContainer.style.width = "120px";
-        navbarContainer.style.height = "420px";
+        navbarContainer.style.width = "35vw";
+        isNavBarShow = true;
+        navbarContainer.style.height = "70vh";
         navbarContainer.style.float = "right"
-        navbarContainer.style.marginLeft = "900px"
         navbarContainer.style.display = "grid";
-        navbarContainer.style.marginTop = "0vh"
-        navbarContainer.style.marginLeft = "255px"
-        navbarContainer.style.backgroundColor = "#051936"
+        navbarContainer.style.marginLeft = "235px"
         navbarContainer.style.justifyContent = "center"
         navbarContainer.style.zIndex = "1"
         navbarContainer.style.position = "absolute"
@@ -192,36 +196,36 @@ document.getElementById("responsiveNavbar").addEventListener("click",()=>{
         navLinkNumberList[2].style.visibility = "hidden";        
         navLinkNumberList[3].style.visibility = "hidden";        
         navLinkNumberList[4].style.visibility = "hidden";        
-        let navLink = document.getElementById("aboutMe");
-        navLink.style.display = "block";
-        navLink.style.visibility = "visible"
-        navLink.style.float = "left"
-        navLink.style.marginTop = "20px"
-        navLink.style.fontSize = "1rem"
-        navLink = document.getElementById("work");
-        navLink.style.display = "block";
-        navLink.style.visibility = "visible"
-        navLink.style.float = "left"
-        navLink.style.marginTop = "2vh"
-        navLink.style.fontSize = "1rem"
-        navLink = document.getElementById("project");
-        navLink.style.display = "block";
-        navLink.style.visibility = "visible"
-        navLink.style.float = "left"
-        navLink.style.marginTop = "2vh"
-        navLink.style.fontSize = "1rem"
-        navLink = document.getElementById("contact");
-        navLink.style.display = "block";
-        navLink.style.visibility = "visible"
-        navLink.style.float = "left"
-        navLink.style.marginTop = "2vh"
-        navLink.style.fontSize = "1rem"
-        navLink = document.getElementById("resume");
-        navLink.style.display = "block";
-        navLink.style.visibility = "visible"
-        navLink.style.float = "left"
-        navLink.style.marginTop = "2vh"
-        navLink.style.fontSize = "1rem"
+        let aboutMePage = document.getElementById("aboutMe");
+        aboutMePage.style.display = "block";
+        aboutMePage.style.visibility = "visible"
+        aboutMePage.style.float = "left"
+        aboutMePage.style.marginTop = "20px"
+        aboutMePage.style.fontSize = "1rem"
+        let workPage = document.getElementById("work");
+        workPage.style.display = "block";
+        workPage.style.visibility = "visible"
+        workPage.style.float = "left"
+        workPage.style.marginTop = "2vh"
+        workPage.style.fontSize = "1rem"
+        let projectPage = document.getElementById("project");
+        projectPage.style.display = "block";
+        projectPage.style.visibility = "visible"
+        projectPage.style.float = "left"
+        projectPage.style.marginTop = "2vh"
+        projectPage.style.fontSize = "1rem"
+        let contactPage = document.getElementById("contact");
+        contactPage.style.display = "block";
+        contactPage.style.visibility = "visible"
+        contactPage.style.float = "left"
+        contactPage.style.marginTop = "2vh"
+        contactPage.style.fontSize = "1rem"
+        let resumeLink = document.getElementById("resume");
+        resumeLink.style.display = "block";
+        resumeLink.style.visibility = "visible"
+        resumeLink.style.float = "left"
+        resumeLink.style.marginTop = "2vh"
+        resumeLink.style.fontSize = "1rem"
         socialLinks[0] = document.createElement("li");
         socialLinks[0].style.fontSize = "1.0rem";
         socialLinks[0].style.color = "#51c0a4";
@@ -230,6 +234,7 @@ document.getElementById("responsiveNavbar").addEventListener("click",()=>{
         socialLinks[0].style.marginTop = "10vh";
         socialLinks[0].style.marginLeft = "21px";
         socialLinks[0].innerText = "LinkedIn"
+        socialLinks[0].href = linkedInLink;
         socialLinks[1] = document.createElement("li");
         socialLinks[1].style.fontSize = "1.0rem";
         socialLinks[1].style.color = "#51c0a4";
@@ -238,6 +243,7 @@ document.getElementById("responsiveNavbar").addEventListener("click",()=>{
         socialLinks[1].style.marginLeft = "21px";
         socialLinks[1].style.marginTop = "2vh";
         socialLinks[1].innerText = "Github"
+        socialLinks[1].href = githubLink;
         socialLinks[2] = document.createElement("li");
         socialLinks[2].style.fontSize = "1.0rem";
         socialLinks[2].style.color = "#51c0a4";
@@ -246,6 +252,7 @@ document.getElementById("responsiveNavbar").addEventListener("click",()=>{
         socialLinks[2].style.marginTop = "2vh";
         socialLinks[2].style.marginLeft = "21px";
         socialLinks[2].innerText = "Facebook"
+        socialLinks[2].href = facebookLink;
         socialLinks[3] = document.createElement("li");
         socialLinks[3].style.fontSize = "1.0rem";
         socialLinks[3].style.color = "#51c0a4";
@@ -254,6 +261,7 @@ document.getElementById("responsiveNavbar").addEventListener("click",()=>{
         socialLinks[3].style.marginLeft = "21px";
         socialLinks[3].style.marginTop = "2vh";
         socialLinks[3].innerText = "Instagram"
+        socialLinks[3].href = instagramLink
         socialLinks[4] = document.createElement("li");
         socialLinks[4].style.fontSize = "1.0rem";
         socialLinks[4].style.color = "#51c0a4";
@@ -262,8 +270,7 @@ document.getElementById("responsiveNavbar").addEventListener("click",()=>{
         socialLinks[4].style.marginLeft = "21px";
         socialLinks[4].style.marginTop = "2vh";
         socialLinks[4].innerText = "Twitter"
-        // document.getElementById("navbarContainer").setAttribute("class", "unblur");
-        // console.log(document.getElementById("navbarContainer"));
+        socialLinks[4].href = twitterLink
         document.getElementById("navlinkContainerList").appendChild(socialLinks[0]);
         document.getElementById("navlinkContainerList").appendChild(socialLinks[1]);
         document.getElementById("navlinkContainerList").appendChild(socialLinks[2]);
@@ -271,6 +278,7 @@ document.getElementById("responsiveNavbar").addEventListener("click",()=>{
         document.getElementById("navlinkContainerList").appendChild(socialLinks[4]);
     }
     else{
+        isNavBarShow = false
         document.getElementById("container").removeAttribute("class");
         let navLink = document.getElementById("aboutMe");
         navLink.style.display = "inline";
@@ -305,5 +313,44 @@ document.getElementById("responsiveNavbar").addEventListener("click",()=>{
         document.getElementsByClassName("FourRowGrid")[0].setAttribute("class", "FourRowGrid");
     }
 });
+document.getElementById("container").addEventListener("click", function(event) {
+    removeResponsiveNavbar(event)
+});
 
-
+function removeResponsiveNavbar(event) {
+    if(isNavBarShow && event.clientX<document.getElementById("navbarContainer").offsetLeft){  
+        isNavBarShow = false;
+        document.getElementById("container").removeAttribute("class");
+        let navLink = document.getElementById("aboutMe");
+        navLink.style.display = "inline";
+        navLink.style.visibility = "hidden"
+        navLink = document.getElementById("work");
+        navLink.style.display = "inline";
+        navLink.style.visibility = "hidden"
+        navLink = document.getElementById("project");
+        navLink.style.display = "inline";
+        navLink.style.visibility = "hidden"
+        navLink = document.getElementById("contact");
+        navLink.style.display = "inline";
+        navLink.style.visibility = "hidden"
+        navLink = document.getElementById("resume");
+        navLink.style.display = "inline";
+        navLink.style.visibility = "hidden"
+        navbarContainer.style.width = "";
+        navbarContainer.style.height = "";
+        navbarContainer.style.backgroundColor = ""
+        let childNodes = document.getElementById("navlinkContainerList").childNodes;
+        document.getElementById("navlinkContainerList").removeChild(document.getElementById("navlinkContainerList").lastChild);
+        document.getElementById("navlinkContainerList").removeChild(document.getElementById("navlinkContainerList").lastChild);
+        document.getElementById("navlinkContainerList").removeChild(document.getElementById("navlinkContainerList").lastChild);
+        document.getElementById("navlinkContainerList").removeChild(document.getElementById("navlinkContainerList").lastChild);
+        document.getElementById("navlinkContainerList").removeChild(document.getElementById("navlinkContainerList").lastChild);
+        navbarContainer.style.visibility = "hidden"
+        document.getElementsByClassName("description")[0].setAttribute("class", "description");
+        document.getElementsByClassName("TwoRowGrid")[0].setAttribute("class", "TwoRowGrid");
+        document.getElementsByClassName("TwoRowGrid")[1].setAttribute("class", "TwoRowGrid");
+        document.getElementsByClassName("TwoRowGrid")[2].setAttribute("class", "TwoRowGrid");
+        document.getElementsByClassName("loadbutton")[0].setAttribute("class", "loadbutton");
+        document.getElementsByClassName("FourRowGrid")[0].setAttribute("class", "FourRowGrid");
+    } 
+}
