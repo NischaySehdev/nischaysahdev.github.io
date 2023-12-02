@@ -32,15 +32,20 @@ function calculateMargin() {
     }
 }
 document.getElementById("aboutMe").addEventListener("click", ()=>{
+    removeResponsiveNavbar(true);
     window.scrollBy(0, document.getElementById("aboutMePage").offsetTop - topMargin);
+
 })
 document.getElementById("work").addEventListener("click", ()=>{
+    removeResponsiveNavbar(true);
     window.scrollBy(0, document.getElementById("workPage").offsetTop- topMargin*4);
 })
 document.getElementById("project").addEventListener("click", ()=>{
+    removeResponsiveNavbar(true);
     window.scrollBy(0, document.getElementById("projectPage").offsetTop - topMargin/2);
 })
 document.getElementById("contact").addEventListener("click", ()=>{
+    removeResponsiveNavbar(true);
     window.scrollBy(0, document.getElementById("contactPage").offsetTop);
 })    
 function messageTo() {
@@ -237,7 +242,6 @@ document.getElementById("responsiveNavbar").addEventListener("click",()=>{
         socialLinks[0].style.float="left";
         socialLinks[0].style.marginTop = "10vh";
         socialLinks[0].style.marginLeft = "21px";
-        console.log(socialLinks[0]);
         socialLinks[1] = document.createElement("li");
         socialLinks[1].style.fontSize = "1.0rem";
         socialLinks[1].style.color = "#51c0a4";
@@ -316,12 +320,14 @@ document.getElementById("responsiveNavbar").addEventListener("click",()=>{
         document.getElementsByClassName("FourRowGrid")[0].setAttribute("class", "FourRowGrid");
     }
 });
+
 document.getElementById("container").addEventListener("click", function(event) {
-    removeResponsiveNavbar(event)
+    let willNavbarBeShown = event.clientX<document.getElementById("navbarContainer").offsetLeft; 
+    removeResponsiveNavbar(willNavbarBeShown);
 });
 
-function removeResponsiveNavbar(event) {
-    if(isNavBarShow && event.clientX<document.getElementById("navbarContainer").offsetLeft){  
+function removeResponsiveNavbar(willNavbarBeShown) {
+    if(isNavBarShow && willNavbarBeShown){  
         isNavBarShow = false;
         document.getElementById("container").removeAttribute("class");
         let navLink = document.getElementById("aboutMe");
