@@ -169,7 +169,7 @@ function closeDialog() {
 
 function clickOnNavbar() {
     let dialogBox = document.getElementById("dialog");
-    dialogBox.style.marginRight = "100px"; 
+    // dialogBox.style.marginRight = "100px"; 
     dialogBox.children[1].innerText = "Test only";
     window.dialog.showModal();
 }
@@ -190,7 +190,7 @@ document.getElementById("responsiveNavbar").addEventListener("click",()=>{
         navbarContainer.style.display = "grid";
         navbarContainer.style.marginLeft = "235px"
         navbarContainer.style.justifyContent = "center"
-        navbarContainer.style.zIndex = "1"
+        navbarContainer.style.zIndex = 10
         navbarContainer.style.position = "absolute"
         navbarContainer.style.borderColor = "white"
         navbarContainer.style.borderWidth = "1px"
@@ -235,6 +235,7 @@ document.getElementById("responsiveNavbar").addEventListener("click",()=>{
         let anchorTag = document.createElement("a");
         anchorTag.innerHTML = "LinkedIn";
         anchorTag.href = linkedInLink;
+        anchorTag.style.color = "#51c0a4";
         socialLinks[0].appendChild(anchorTag);
         socialLinks[0].style.fontSize = "1.0rem";
         socialLinks[0].style.color = "#51c0a4";
@@ -243,32 +244,47 @@ document.getElementById("responsiveNavbar").addEventListener("click",()=>{
         socialLinks[0].style.marginTop = "10vh";
         socialLinks[0].style.marginLeft = "21px";
         socialLinks[1] = document.createElement("li");
+        let anchorTagGithub = document.createElement("a");
+        anchorTagGithub.innerHTML = "GitHub";
+        anchorTagGithub.href = githubLink;
+        anchorTagGithub.style.color = "#51c0a4";
+        socialLinks[1].appendChild(anchorTagGithub);
         socialLinks[1].style.fontSize = "1.0rem";
         socialLinks[1].style.color = "#51c0a4";
         socialLinks[1].style.display = "block";
         socialLinks[1].style.float="left";
         socialLinks[1].style.marginLeft = "21px";
         socialLinks[1].style.marginTop = "2vh";
-        socialLinks[1].innerText = "Github"
-        socialLinks[1].href = githubLink;
         socialLinks[2] = document.createElement("li");
+        let anchorTagFacebook = document.createElement("a");
+        anchorTagFacebook.innerHTML = "Facebook";
+        anchorTagFacebook.href = facebookLink;
+        anchorTagFacebook.style.color = "#51c0a4";
+        socialLinks[2].appendChild(anchorTagFacebook);
         socialLinks[2].style.fontSize = "1.0rem";
         socialLinks[2].style.color = "#51c0a4";
         socialLinks[2].style.display = "block";
         socialLinks[2].style.float="left";
         socialLinks[2].style.marginTop = "2vh";
         socialLinks[2].style.marginLeft = "21px";
-        socialLinks[2].innerText = "Facebook"
-        socialLinks[2].href = facebookLink;
         socialLinks[3] = document.createElement("li");
+        let anchorTagInstragram = document.createElement("a");
+        anchorTagInstragram.innerHTML = "Instagram";
+        anchorTagInstragram.href = instagramLink;
+        anchorTagInstragram.style.color = "#51c0a4";
+        socialLinks[3].appendChild(anchorTagInstragram);
         socialLinks[3].style.fontSize = "1.0rem";
         socialLinks[3].style.color = "#51c0a4";
         socialLinks[3].style.display = "block";
         socialLinks[3].style.float="left";
         socialLinks[3].style.marginLeft = "21px";
         socialLinks[3].style.marginTop = "2vh";
-        socialLinks[3].innerText = "Instagram"
-        socialLinks[3].href = instagramLink
+        socialLinks[4] = document.createElement("li");
+        let anchorTagTwitter = document.createElement("a");
+        anchorTagTwitter.innerHTML = "Twitter";
+        anchorTagTwitter.href = instagramLink;
+        anchorTagTwitter.style.color = "#51c0a4";
+        socialLinks[4].appendChild(anchorTagTwitter);
         socialLinks[4] = document.createElement("li");
         socialLinks[4].style.fontSize = "1.0rem";
         socialLinks[4].style.color = "#51c0a4";
@@ -276,13 +292,12 @@ document.getElementById("responsiveNavbar").addEventListener("click",()=>{
         socialLinks[4].style.float="left";
         socialLinks[4].style.marginLeft = "21px";
         socialLinks[4].style.marginTop = "2vh";
-        socialLinks[4].innerText = "Twitter"
-        socialLinks[4].href = twitterLink
         document.getElementById("navlinkContainerList").appendChild(socialLinks[0]);
         document.getElementById("navlinkContainerList").appendChild(socialLinks[1]);
         document.getElementById("navlinkContainerList").appendChild(socialLinks[2]);
         document.getElementById("navlinkContainerList").appendChild(socialLinks[3]);
         document.getElementById("navlinkContainerList").appendChild(socialLinks[4]);
+        document.getElementById("frontPage").style.zIndex = -1
     }
     else{
         isNavBarShow = false
@@ -328,6 +343,7 @@ document.getElementById("container").addEventListener("click", function(event) {
 
 function removeResponsiveNavbar(willNavbarBeShown) {
     if(isNavBarShow && willNavbarBeShown){  
+        document.getElementById("frontPage").style.zIndex = 1
         isNavBarShow = false;
         document.getElementById("container").removeAttribute("class");
         let navLink = document.getElementById("aboutMe");
