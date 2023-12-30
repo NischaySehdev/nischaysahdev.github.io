@@ -117,13 +117,6 @@ aboutMePageContainer.appendChild(myPhoto);
 aboutMePageContainer.appendChild(aboutMePageContent);
 }
 
-document.getElementById("organization-button-next").addEventListener("click", ()=>{
-    changeJobDescription(1)    
-})
-document.getElementById("organization-button-previous").addEventListener("click", ()=>{
-    changeJobDescription(-1)
-})
-
 function changeJobDescription(index) {
     let dialogBox = document.getElementById("dialog");
     let currentOrganization = document.getElementById("organization-title").children[0].innerHTML;
@@ -297,7 +290,6 @@ document.getElementById("responsiveNavbar").addEventListener("click",()=>{
         document.getElementById("navlinkContainerList").appendChild(socialLinks[2]);
         document.getElementById("navlinkContainerList").appendChild(socialLinks[3]);
         document.getElementById("navlinkContainerList").appendChild(socialLinks[4]);
-        document.getElementById("frontPage").style.zIndex = -1
     }
     else{
         isNavBarShow = false
