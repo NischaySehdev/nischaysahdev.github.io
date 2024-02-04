@@ -7,7 +7,7 @@ const githubLink = "https://github.com/NischaySehdev";
 const facebookLink = "https://www.facebook.com/nischay.sehdev";
 const instagramLink = "https://www.instagram.com/nischay_sehdev/";
 const linkedInLink = "https://www.linkedin.com/in/nischay-sehdev";
-const twitterLink = "https://twitter.com/SehdevNischay"; 
+const twitterLink = "https://twitter.com/SehdevNischay";
 let isNavBarShow = false;
 let aboutMePageContainer = document.getElementById("aboutMePage");
 let topMargin = calculateMargin();
@@ -24,39 +24,39 @@ httpRequest.onreadystatechange = function () {
 httpRequest.open("GET", "php/getData.php", true);
 httpRequest.send();
 function calculateMargin() {
-    if(window.outerHeight>1024){
+    if (window.outerHeight > 1024) {
         return 50;
     }
-    else if(window.outerHeight<=1024){
+    else if (window.outerHeight <= 1024) {
         return 40;
     }
 }
-document.getElementById("aboutMe").addEventListener("click", ()=>{
-    removeResponsiveNavbar(true);
+document.getElementById("aboutMeNavLink").addEventListener("click", () => {
+    removeresponsiveNavbarImage(true);
     window.scrollBy(0, document.getElementById("aboutMePage").offsetTop - topMargin);
 
 })
-document.getElementById("work").addEventListener("click", ()=>{
-    removeResponsiveNavbar(true);
-    window.scrollBy(0, document.getElementById("workPage").offsetTop- topMargin*4);
+document.getElementById("workNavLink").addEventListener("click", () => {
+    removeresponsiveNavbarImage(true);
+    window.scrollBy(0, document.getElementById("workPage").offsetTop - topMargin);
 })
-document.getElementById("project").addEventListener("click", ()=>{
-    removeResponsiveNavbar(true);
-    window.scrollBy(0, document.getElementById("projectPage").offsetTop - topMargin/2);
+document.getElementById("projectNavLink").addEventListener("click", () => {
+    removeresponsiveNavbarImage(true);
+    window.scrollBy(0, document.getElementById("projectPage").offsetTop - topMargin);
 })
-document.getElementById("contact").addEventListener("click", ()=>{
-    removeResponsiveNavbar(true);
+document.getElementById("contactNavLink").addEventListener("click", () => {
+    removeresponsiveNavbarImage(true);
     window.scrollBy(0, document.getElementById("contactPage").offsetTop);
-})    
+})
 function messageTo() {
     window.location.href = "mailto:nischaysahdevoo8@gmail.com?subject = Feedback&body = Message";
 }
-document.getElementById("more-projects-button").addEventListener("click", ()=>{
+document.getElementById("more-projects-button").addEventListener("click", () => {
     let projectTable = document.getElementById("projectTable");
-    let lastProject = projectTable.children[projectTable.childElementCount-1].children[0].innerHTML;
+    let lastProject = projectTable.children[projectTable.childElementCount - 1].children[0].innerHTML;
     let projectId = getProjectId(lastProject);
     while (true) {
-        if(projectList.hasOwnProperty(++projectId)){
+        if (projectList.hasOwnProperty(++projectId)) {
             let project = document.createElement('div');
             project.className = "project";
             project.id = projectList[projectId].projectTitle;
@@ -75,13 +75,13 @@ document.getElementById("more-projects-button").addEventListener("click", ()=>{
             techStack = techStack.split(", ");
             let techStackInnerHtml = "";
             techStack.forEach(tech => {
-                techStackInnerHtml+="<li class=\"tech\">"+tech+", </li>";
-            }); 
+                techStackInnerHtml += "<li class=\"tech\">" + tech + ", </li>";
+            });
             techList.innerHTML = techStackInnerHtml;
             projectStack.appendChild(techList);
             project.appendChild(projectStack);
             projectTable.appendChild(project);
-        }else{
+        } else {
             let dialogBox = document.getElementById("dialog");
             dialogBox.children[1].innerHTML = "More projects will be listed very soon.."
             window.dialog.showModal();
@@ -90,53 +90,52 @@ document.getElementById("more-projects-button").addEventListener("click", ()=>{
     }
 })
 
-document.getElementById("customerManagementSystem").addEventListener("click", ()=>{
+document.getElementById("customerManagementSystem").addEventListener("click", () => {
     window.location.href = customerManagementSystemLink;
-})  
-document.getElementById("universityManagementSystem").addEventListener("click", ()=>{
+})
+document.getElementById("universityManagementSystem").addEventListener("click", () => {
     window.location.href = universityManagementSystemLink;
-})  
-document.getElementById("ignouAnOfficialApplication").addEventListener("click", ()=>{
+})
+document.getElementById("ignouAnOfficialApplication").addEventListener("click", () => {
     // window.location.href = customerManagementSystemLink;
-})  
-document.getElementById("messenger").addEventListener("click", ()=>{
+})
+document.getElementById("messenger").addEventListener("click", () => {
     // window.location.href = customerManagementSystemLink;
-})  
-document.getElementById("movieCatalog").addEventListener("click", ()=>{
+})
+document.getElementById("movieCatalog").addEventListener("click", () => {
     // window.location.href = customerManagementSystemLink;
-})  
-document.getElementById("keepClone").addEventListener("click", ()=>{
+})
+document.getElementById("keepClone").addEventListener("click", () => {
     // window.location.href = customerManagementSystemLink;
-})  
+})
 
 // Responsiveness -- Ipad mini
-if(window.outerWidth<=820){
-aboutMePageContainer.removeChild
-aboutMePageContainer.appendChild(aboutMePageTitle);
-aboutMePageContainer.appendChild(myPhoto);
-aboutMePageContainer.appendChild(aboutMePageContent);
+if (window.outerWidth <= 820) {
+    aboutMePageContainer.removeChild
+    aboutMePageContainer.appendChild(aboutMePageTitle);
+    aboutMePageContainer.appendChild(aboutMePageContent);
 }
 
 function changeJobDescription(index) {
     let dialogBox = document.getElementById("dialog");
     let currentOrganization = document.getElementById("organization-title").children[0].innerHTML;
     let organizationId = Number(getOrganizationId(currentOrganization));
-    if(!jobDescription.hasOwnProperty(organizationId+index)){
-        if(index == -1){
-            dialogBox.children[1].innerHTML = "<b>"+jobDescription[organizationId].title+"</b>"+ " was my first organization.."
+    if (!jobDescription.hasOwnProperty(organizationId + index)) {
+        if (index == -1) {
+            dialogBox.children[1].innerHTML = "<b>" + jobDescription[organizationId].title + "</b>" + " was my first organization.."
         }
-        else{
-            dialogBox.children[1].innerHTML = "<b>"+jobDescription[organizationId].title+"</b>"+ " is my last organization.."
+        else {
+            dialogBox.children[1].innerHTML = "<b>" + jobDescription[organizationId].title + "</b>" + " is my last organization.."
         }
         window.dialog.showModal();
     }
-    else{
-        document.getElementById("organization-title").innerHTML = "<a href=\"#\">"+jobDescription[organizationId+index].title+"</a>"+ jobDescription[organizationId+index].duration
+    else {
+        document.getElementById("organization-title").innerHTML = "<a href=\"#\">" + jobDescription[organizationId + index].title + "</a>" + jobDescription[organizationId + index].duration
         document.getElementById("jobDescriptionPoints").innerHTML = "";
         let jobDescriptionIndex = 1;
         let jobDescriptionPoints = "";
-        jobDescription[organizationId+index].description.forEach(point => {
-            jobDescriptionPoints += "<li><div class=\"navnumber\">0"+(jobDescriptionIndex++)+".</div>"+point+".</li>"
+        jobDescription[organizationId + index].description.forEach(point => {
+            jobDescriptionPoints += "<li><div class=\"navnumber\">0" + (jobDescriptionIndex++) + ".</div>" + point + ".</li>"
         });
         document.getElementById("jobDescriptionPoints").innerHTML = jobDescriptionPoints;
     }
@@ -144,14 +143,14 @@ function changeJobDescription(index) {
 
 function getOrganizationId(organizationName) {
     for (let [organizationId, organization] of Object.entries(jobDescription)) {
-        if(organization.title == organizationName){
+        if (organization.title == organizationName) {
             return organizationId;
         }
     }
 }
 function getProjectId(lastProject) {
     for (let [id, project] of Object.entries(projectList)) {
-        if(project.projectTitle == lastProject){
+        if (project.projectTitle == lastProject) {
             return id;
         }
     }
@@ -166,10 +165,10 @@ function clickOnNavbar() {
     dialogBox.children[1].innerText = "Test only";
     window.dialog.showModal();
 }
-document.getElementById("responsiveNavbar").addEventListener("click",()=>{
+document.getElementById("responsiveNavbarImage").addEventListener("click", () => {
     let navbarContainer = document.getElementById("navbarContainer");
-    if(!isNavBarShow){
-        document.getElementsByClassName("description")[0].setAttribute("class", "blur description");
+    if (!isNavBarShow) {
+        document.getElementsByClassName("frontPageContent")[0].setAttribute("class", "blur frontPageContent");
         document.getElementsByClassName("TwoRowGrid")[0].setAttribute("class", "blur TwoRowGrid");
         document.getElementsByClassName("TwoRowGrid")[1].setAttribute("class", "blur TwoRowGrid");
         document.getElementsByClassName("TwoRowGrid")[2].setAttribute("class", "blur TwoRowGrid");
@@ -187,126 +186,126 @@ document.getElementById("responsiveNavbar").addEventListener("click",()=>{
         navbarContainer.style.position = "absolute"
         navbarContainer.style.borderColor = "white"
         navbarContainer.style.borderWidth = "1px"
-        navbarContainer.style.borderStyle = "solid" 
+        navbarContainer.style.borderStyle = "solid"
         let navLinkNumberList = document.getElementsByClassName("navnumber")
-        navLinkNumberList[0].style.visibility = "hidden";        
-        navLinkNumberList[1].style.visibility = "hidden";        
-        navLinkNumberList[2].style.visibility = "hidden";        
-        navLinkNumberList[3].style.visibility = "hidden";        
-        navLinkNumberList[4].style.visibility = "hidden";        
-        let aboutMePage = document.getElementById("aboutMe");
+        navLinkNumberList[0].style.visibility = "hidden";
+        navLinkNumberList[1].style.visibility = "hidden";
+        navLinkNumberList[2].style.visibility = "hidden";
+        navLinkNumberList[3].style.visibility = "hidden";
+        navLinkNumberList[4].style.visibility = "hidden";
+        let aboutMePage = document.getElementById("aboutMeNavLink");
         aboutMePage.style.display = "block";
         aboutMePage.style.visibility = "visible"
         aboutMePage.style.float = "left"
         aboutMePage.style.marginTop = "20px"
         aboutMePage.style.fontSize = "1rem"
-        let workPage = document.getElementById("work");
+        let workPage = document.getElementById("workNavLink");
         workPage.style.display = "block";
         workPage.style.visibility = "visible"
         workPage.style.float = "left"
         workPage.style.marginTop = "2vh"
         workPage.style.fontSize = "1rem"
-        let projectPage = document.getElementById("project");
+        let projectPage = document.getElementById("projectNavLink");
         projectPage.style.display = "block";
         projectPage.style.visibility = "visible"
         projectPage.style.float = "left"
         projectPage.style.marginTop = "2vh"
         projectPage.style.fontSize = "1rem"
-        let contactPage = document.getElementById("contact");
+        let contactPage = document.getElementById("contactNavLink");
         contactPage.style.display = "block";
         contactPage.style.visibility = "visible"
         contactPage.style.float = "left"
         contactPage.style.marginTop = "2vh"
         contactPage.style.fontSize = "1rem"
-        let resumeLink = document.getElementById("resume");
+        let resumeLink = document.getElementById("resumeNavLink");
         resumeLink.style.display = "block";
         resumeLink.style.visibility = "visible"
         resumeLink.style.float = "left"
         resumeLink.style.marginTop = "2vh"
         resumeLink.style.fontSize = "1rem"
-        socialLinks[0] = document.createElement("li");
+        socialLinksContainer[0] = document.createElement("li");
         let anchorTag = document.createElement("a");
         anchorTag.innerHTML = "LinkedIn";
         anchorTag.href = linkedInLink;
         anchorTag.style.color = "#51c0a4";
-        socialLinks[0].appendChild(anchorTag);
-        socialLinks[0].style.fontSize = "1.0rem";
-        socialLinks[0].style.color = "#51c0a4";
-        socialLinks[0].style.display = "block";
-        socialLinks[0].style.float="left";
-        socialLinks[0].style.marginTop = "10vh";
-        socialLinks[0].style.marginLeft = "21px";
-        socialLinks[1] = document.createElement("li");
+        socialLinksContainer[0].appendChild(anchorTag);
+        socialLinksContainer[0].style.fontSize = "1.0rem";
+        socialLinksContainer[0].style.color = "#51c0a4";
+        socialLinksContainer[0].style.display = "block";
+        socialLinksContainer[0].style.float = "left";
+        socialLinksContainer[0].style.marginTop = "10vh";
+        socialLinksContainer[0].style.marginLeft = "21px";
+        socialLinksContainer[1] = document.createElement("li");
         let anchorTagGithub = document.createElement("a");
         anchorTagGithub.innerHTML = "GitHub";
         anchorTagGithub.href = githubLink;
         anchorTagGithub.style.color = "#51c0a4";
-        socialLinks[1].appendChild(anchorTagGithub);
-        socialLinks[1].style.fontSize = "1.0rem";
-        socialLinks[1].style.color = "#51c0a4";
-        socialLinks[1].style.display = "block";
-        socialLinks[1].style.float="left";
-        socialLinks[1].style.marginLeft = "21px";
-        socialLinks[1].style.marginTop = "2vh";
-        socialLinks[2] = document.createElement("li");
+        socialLinksContainer[1].appendChild(anchorTagGithub);
+        socialLinksContainer[1].style.fontSize = "1.0rem";
+        socialLinksContainer[1].style.color = "#51c0a4";
+        socialLinksContainer[1].style.display = "block";
+        socialLinksContainer[1].style.float = "left";
+        socialLinksContainer[1].style.marginLeft = "21px";
+        socialLinksContainer[1].style.marginTop = "2vh";
+        socialLinksContainer[2] = document.createElement("li");
         let anchorTagFacebook = document.createElement("a");
         anchorTagFacebook.innerHTML = "Facebook";
         anchorTagFacebook.href = facebookLink;
         anchorTagFacebook.style.color = "#51c0a4";
-        socialLinks[2].appendChild(anchorTagFacebook);
-        socialLinks[2].style.fontSize = "1.0rem";
-        socialLinks[2].style.color = "#51c0a4";
-        socialLinks[2].style.display = "block";
-        socialLinks[2].style.float="left";
-        socialLinks[2].style.marginTop = "2vh";
-        socialLinks[2].style.marginLeft = "21px";
-        socialLinks[3] = document.createElement("li");
+        socialLinksContainer[2].appendChild(anchorTagFacebook);
+        socialLinksContainer[2].style.fontSize = "1.0rem";
+        socialLinksContainer[2].style.color = "#51c0a4";
+        socialLinksContainer[2].style.display = "block";
+        socialLinksContainer[2].style.float = "left";
+        socialLinksContainer[2].style.marginTop = "2vh";
+        socialLinksContainer[2].style.marginLeft = "21px";
+        socialLinksContainer[3] = document.createElement("li");
         let anchorTagInstragram = document.createElement("a");
         anchorTagInstragram.innerHTML = "Instagram";
         anchorTagInstragram.href = instagramLink;
         anchorTagInstragram.style.color = "#51c0a4";
-        socialLinks[3].appendChild(anchorTagInstragram);
-        socialLinks[3].style.fontSize = "1.0rem";
-        socialLinks[3].style.color = "#51c0a4";
-        socialLinks[3].style.display = "block";
-        socialLinks[3].style.float="left";
-        socialLinks[3].style.marginLeft = "21px";
-        socialLinks[3].style.marginTop = "2vh";
-        socialLinks[4] = document.createElement("li");
+        socialLinksContainer[3].appendChild(anchorTagInstragram);
+        socialLinksContainer[3].style.fontSize = "1.0rem";
+        socialLinksContainer[3].style.color = "#51c0a4";
+        socialLinksContainer[3].style.display = "block";
+        socialLinksContainer[3].style.float = "left";
+        socialLinksContainer[3].style.marginLeft = "21px";
+        socialLinksContainer[3].style.marginTop = "2vh";
+        socialLinksContainer[4] = document.createElement("li");
         let anchorTagTwitter = document.createElement("a");
         anchorTagTwitter.innerHTML = "Twitter";
         anchorTagTwitter.href = instagramLink;
         anchorTagTwitter.style.color = "#51c0a4";
-        socialLinks[4].appendChild(anchorTagTwitter);
-        socialLinks[4] = document.createElement("li");
-        socialLinks[4].style.fontSize = "1.0rem";
-        socialLinks[4].style.color = "#51c0a4";
-        socialLinks[4].style.display = "block";
-        socialLinks[4].style.float="left";
-        socialLinks[4].style.marginLeft = "21px";
-        socialLinks[4].style.marginTop = "2vh";
-        document.getElementById("navlinkContainerList").appendChild(socialLinks[0]);
-        document.getElementById("navlinkContainerList").appendChild(socialLinks[1]);
-        document.getElementById("navlinkContainerList").appendChild(socialLinks[2]);
-        document.getElementById("navlinkContainerList").appendChild(socialLinks[3]);
-        document.getElementById("navlinkContainerList").appendChild(socialLinks[4]);
+        socialLinksContainer[4].appendChild(anchorTagTwitter);
+        socialLinksContainer[4] = document.createElement("li");
+        socialLinksContainer[4].style.fontSize = "1.0rem";
+        socialLinksContainer[4].style.color = "#51c0a4";
+        socialLinksContainer[4].style.display = "block";
+        socialLinksContainer[4].style.float = "left";
+        socialLinksContainer[4].style.marginLeft = "21px";
+        socialLinksContainer[4].style.marginTop = "2vh";
+        document.getElementById("navlinkContainerList").appendChild(socialLinksContainer[0]);
+        document.getElementById("navlinkContainerList").appendChild(socialLinksContainer[1]);
+        document.getElementById("navlinkContainerList").appendChild(socialLinksContainer[2]);
+        document.getElementById("navlinkContainerList").appendChild(socialLinksContainer[3]);
+        document.getElementById("navlinkContainerList").appendChild(socialLinksContainer[4]);
     }
-    else{
+    else {
         isNavBarShow = false
         document.getElementById("container").removeAttribute("class");
-        let navLink = document.getElementById("aboutMe");
+        let navLink = document.getElementById("aboutMeNavLink");
         navLink.style.display = "inline";
         navLink.style.visibility = "hidden"
-        navLink = document.getElementById("work");
+        navLink = document.getElementById("workNavLink");
         navLink.style.display = "inline";
         navLink.style.visibility = "hidden"
-        navLink = document.getElementById("project");
+        navLink = document.getElementById("projectNavLink");
         navLink.style.display = "inline";
         navLink.style.visibility = "hidden"
-        navLink = document.getElementById("contact");
+        navLink = document.getElementById("contactNavLink");
         navLink.style.display = "inline";
         navLink.style.visibility = "hidden"
-        navLink = document.getElementById("resume");
+        navLink = document.getElementById("resumeNavLink");
         navLink.style.display = "inline";
         navLink.style.visibility = "hidden"
         navbarContainer.style.width = "";
@@ -319,7 +318,7 @@ document.getElementById("responsiveNavbar").addEventListener("click",()=>{
         document.getElementById("navlinkContainerList").removeChild(document.getElementById("navlinkContainerList").lastChild);
         document.getElementById("navlinkContainerList").removeChild(document.getElementById("navlinkContainerList").lastChild);
         navbarContainer.style.visibility = "hidden"
-        document.getElementsByClassName("description")[0].setAttribute("class", "description");
+        document.getElementsByClassName("frontPageContent")[0].setAttribute("class", "frontPageContent");
         document.getElementsByClassName("TwoRowGrid")[0].setAttribute("class", "TwoRowGrid");
         document.getElementsByClassName("TwoRowGrid")[1].setAttribute("class", "TwoRowGrid");
         document.getElementsByClassName("TwoRowGrid")[2].setAttribute("class", "TwoRowGrid");
@@ -328,29 +327,29 @@ document.getElementById("responsiveNavbar").addEventListener("click",()=>{
     }
 });
 
-document.getElementById("container").addEventListener("click", function(event) {
-    let willNavbarBeShown = event.clientX<document.getElementById("navbarContainer").offsetLeft; 
-    removeResponsiveNavbar(willNavbarBeShown);
+document.getElementById("container").addEventListener("click", function (event) {
+    let willNavbarBeShown = event.clientX < document.getElementById("navbarContainer").offsetLeft;
+    removeresponsiveNavbarImage(willNavbarBeShown);
 });
 
-function removeResponsiveNavbar(willNavbarBeShown) {
-    if(isNavBarShow && willNavbarBeShown){  
-        document.getElementById("frontPage").style.zIndex = 1
+function removeresponsiveNavbarImage(willNavbarBeShown) {
+    if (isNavBarShow && willNavbarBeShown) {
+        document.getElementById("frontPageBanner").style.zIndex = 1
         isNavBarShow = false;
         document.getElementById("container").removeAttribute("class");
-        let navLink = document.getElementById("aboutMe");
+        let navLink = document.getElementById("aboutMeNavLink");
         navLink.style.display = "inline";
         navLink.style.visibility = "hidden"
-        navLink = document.getElementById("work");
+        navLink = document.getElementById("workNavLink");
         navLink.style.display = "inline";
         navLink.style.visibility = "hidden"
-        navLink = document.getElementById("project");
+        navLink = document.getElementById("projectNavLink");
         navLink.style.display = "inline";
         navLink.style.visibility = "hidden"
-        navLink = document.getElementById("contact");
+        navLink = document.getElementById("contactNavLink");
         navLink.style.display = "inline";
         navLink.style.visibility = "hidden"
-        navLink = document.getElementById("resume");
+        navLink = document.getElementById("resumeNavLink");
         navLink.style.display = "inline";
         navLink.style.visibility = "hidden"
         navbarContainer.style.width = "";
@@ -363,11 +362,11 @@ function removeResponsiveNavbar(willNavbarBeShown) {
         document.getElementById("navlinkContainerList").removeChild(document.getElementById("navlinkContainerList").lastChild);
         document.getElementById("navlinkContainerList").removeChild(document.getElementById("navlinkContainerList").lastChild);
         navbarContainer.style.visibility = "hidden"
-        document.getElementsByClassName("description")[0].setAttribute("class", "description");
+        document.getElementsByClassName("frontPageContent")[0].setAttribute("class", "frontPageContent");
         document.getElementsByClassName("TwoRowGrid")[0].setAttribute("class", "TwoRowGrid");
         document.getElementsByClassName("TwoRowGrid")[1].setAttribute("class", "TwoRowGrid");
         document.getElementsByClassName("TwoRowGrid")[2].setAttribute("class", "TwoRowGrid");
         document.getElementsByClassName("loadbutton")[0].setAttribute("class", "loadbutton");
         document.getElementsByClassName("FourRowGrid")[0].setAttribute("class", "FourRowGrid");
-    } 
+    }
 }

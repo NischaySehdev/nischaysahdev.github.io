@@ -1,224 +1,299 @@
 /* This is for the universal  */
-*{
+* {
     margin: 0%;
     padding: 0%;
-    box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
-    margin: 0%;
-    padding: 0%;
-    width: 100vw;
-} 
+}
 
 
 /* This is for the background */
 #container {
     display: grid;
-    width: 100%;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Open Sans', sans-serif;
     background-color: #0a192f;
+    width: max-content;
 }
 
-header{
-    width: 100vw;
-    margin-left: 0%;
-}
-nav {
-    margin-top: 2vh;
-    position: sticky;
-    text-align: right;
-}
-/* Navbar links are below */
+/* Navbar component starts from here */
+
 .navlink {
     padding-right: 2vw;
-    font-size: 1rem;
+    font-size: 0.85vw;
     color: #d1d4d6;
     display: inline;
-    z-index: 1;
+    font-family: 'Open Sans', sans-serif;
+    transition: all 2500ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.navnumber{
+.resumeNavLink {
+    font-family: 'Open Sans', sans-serif;
+    padding-right: 2vw;
+    font-size: .85rem;
+    color: #d1d4d6;
+    display: inline;
+    transition: all 2500ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.navlink:hover {
+    color: #51c0a4;
+    cursor: pointer;
+}
+
+.navnumber {
     text-decoration: none;
     display: inline;
     color: #51c0a4;
-    font-size: 1rem;
+    font-size: .8vw;
 }
 
-/* sociallinks */
+/* Navbar component ends from here */
+
 li {
     list-style-type: none;
 }
 
-a{
+a {
     text-decoration: none;
     color: #d1d4d6;
 }
-#dialog {
-	padding: 1rem 3rem;
-	background: white;
-	max-width: 400px;
-	padding-top: 2rem;
-	border-radius: 20px;
-	border: 0;
-    margin-left: 35vw;
-    margin-top: 35vh;
-	box-shadow: 0 5px 30px 0 rgb(0 0 0 / 10%);
-	animation: fadeIn 1s ease both;
-	&::backdrop {
-		animation: fadeIn 1s ease both;
-		background: rgba(11, 17, 48, 0.4);
-		z-index: 2;
-		backdrop-filter: blur(5px);
-	}
-	.x {
-		filter: grayscale(1);
-		border: none;
-		background: none;
-		position: absolute;
-		top: 15px;
-        right: 10px;
-		transition: ease filter, transform 0.3s;
-		cursor: pointer;
-		transform-origin: center;
-		&:hover {
-			filter: grayscale(-1);
-			transform: scale(1.1);
-		}
-	}
-	h2 {
-		font-weight: 600;
-		font-size: 2rem;
-		padding-bottom: 1rem;
-	}
-	p {
-		font-size: 1rem;
-		line-height: 1.3rem;
-		padding: 0.5rem 0;
-		a {
-			&:visited {
-				color: rgb(var(--vs-primary));
-			}
-		}
-	}
+
+#navbarContainer {
+    display: flex;
+    justify-content: right;
+    margin-top: 30px;
 }
 
-.blur{
+/* Dialog component starts from here */
+#dialog {
+    padding: 1rem 3rem;
+    background: white;
+    max-width: 400px;
+    padding-top: 2rem;
+    border-radius: 20px;
+    border: 0;
+    margin-left: 35vw;
+    margin-top: 35vh;
+    box-shadow: 0 5px 30px 0 rgb(0 0 0 / 10%);
+    animation: fadeIn 1s ease both;
+
+    &::backdrop {
+        animation: fadeIn 1s ease both;
+        background: rgba(11, 17, 48, 0.4);
+        z-index: 2;
+        backdrop-filter: blur(5px);
+    }
+
+    .x {
+        filter: grayscale(1);
+        border: none;
+        background: none;
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        transition: ease filter, transform 0.3s;
+        cursor: pointer;
+        transform-origin: center;
+
+        &:hover {
+            filter: grayscale(-1);
+            transform: scale(1.1);
+        }
+    }
+
+    h2 {
+        font-weight: 600;
+        font-size: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.3rem;
+        padding: 0.5rem 0;
+
+        a {
+            &:visited {
+                color: rgb(var(--vs-primary));
+            }
+        }
+    }
+}
+
+.blur {
     filter: blur(100px);
 }
 
-.unblur{
+.unblur {
     filter: blur(-5px);
     background-color: pink;
 }
 
-#frontPage {
-    display: grid; 
-    margin-top: 20vh;
+/* Dialog component ends from here */
+#frontPageBanner {
+    display: grid;
+    font-weight: bolder;
+    grid-template-columns: auto auto auto;
+    margin-top: 180px;
     color: white;
-    width: 90%;
-    font-family: 'Rammetto', serif;
+    width: 100vw;
     line-height: 1.5;
+    margin-top: 15vh;
+    margin-bottom: 40vh;
 }
 
-#socialLinks {
-    margin-left: 1vw;
+#socialLinksContainer {
+    margin-left: 15px;
     text-align: left;
     position: fixed;
-    margin-top: 30vh;
-    line-height: 3.5rem;
-}
-.description{
-    display: grid;
-    margin-left: 15vw;
-    margin-right: 12vw;
-    row-gap: 1.5vh;
-    font-weight: 900;
-    font-family: 'IBM Plex Mono', monospace;
+    margin-top: 10vw;
+    line-height: 3.5vw;
 }
 
-#greetings {
-    font-size: 10.0rem;
+#iconImage {
+    width: 2.1vw;
+    height: auto;
+}
+
+
+.frontPageContent {
+    display: grid;
+    grid-template-rows: auto auto auto auto auto;
+    margin-left: 18vw;
+    margin-right: 12vw;
+    row-gap: 10px;
+    font-weight: 900;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#greetingsHeadline {
+    font-size: .9vw;
     color: #51c0a4;
 }
 
-#name {
-    font-size: 10rem;
-    color: #c6dfef;
+#nameHeadLine {
+    font-size: 4.5vw;
+    color: #CCD6F6;
 }
 
-#profession {
-    font-size: 2.7rem;
-    color: #d1d4d6;
+#professionHeadLine {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 4.0vw;
+    font-weight: bolder;
+    color: #8892B0;
 }
 
-#descreption {
-    font-size: 1.35rem;
-    color: #d1d4d6;
-    width: 40vw;
+#descriptionHeadLine {
+    font-size: 1.25vw;
+    font-family: 'Open Sans', sans-serif;
+    color: #3B4862;
+    width: 60%;
 }
 
 .messageButton {
-    line-height: 50px;
-    width: 250px;
+    height: 3vw;
+    width: 10vw;
     cursor: pointer;
-    color: white;
-    position: relative;
-    font-size: large;
+    color: #51c0a4;
+    font-size: 1vw;
     font-family: 'IBM Plex Mono', monospace;
     background-color: transparent;
-    border: white 2px solid;
+    border: #51c0a4 2px solid;
     transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 /* website URL */
-#websiteURl {
-    margin-top: 30vh;
-    margin-right: 2vw;
+#websiteURlSideBar {
+    margin-top: 10vw;
+    letter-spacing: .16vw;
     position: fixed;
-    font-size: .7rem;
-    writing-mode: vertical-lr;
-    letter-spacing: .4rem;
     justify-self: right;
+    font-size: .8vw;
+    margin-right: 30px;
+    font-family: 'Open Sans', sans-serif;
+    writing-mode: vertical-lr;
 }
+
+#websiteURlSideBar:hover {
+    cursor: pointer;
+    color: #51c0a4;
+}
+
 /* Checkout button */
 .button {
-    margin-top: 3vh;
+    margin-top: 40px;
 }
+
 /* Next page just after the front page */
 .TwoRowGrid {
     display: grid;
-    margin-left: 20vw;
-    margin-top: 30vh;
-    width: 60%;
+    margin-top: 320px;
+    width: 100%;
+    justify-content: center;
     color: #d1d4d6;
 }
-.subheading{
-    font-size: 1.75rem;
-    color: #c6dfef;
+
+.pageTitle {
+    font-size: 1.45vw;
+    color: #c6dfefe2;
     font-weight: 1000;
-    margin-bottom: 5vh;
+    margin-bottom: 20px;
+    align-self: center;
 }
-#organization-title{
+
+#subHeadingSerial {
     color: #51c0a4;
-    font-size: 1.5rem;
-    margin-bottom: 1vh;
-    font-weight: 1000;
+    font-size: 1.3vw;
 }
-.contents{
-    /* display: grid; */
-    /* grid-template-columns: auto 40%; */
+
+#organization-title {
+    color: #51c0a4;
+    font-size: 1.5vw;
+    margin-bottom: 10px;
 }
-#content {
+
+.contents {
+    display: grid;
+}
+
+.content {
+    align-self: center;
     margin-top: 2vh;
+    text-align: justify;
+    font-size: 1.10vw;
+    font-weight: bold;
+    width: 50vw;
+    letter-spacing: .01rem;
+    color: #8892B0;
+}
+
+.jobDescriptionTable {
+    display: grid;
+    grid-template-columns: 45vw auto;
+}
+
+#content {
+    margin-top: 20px;
     text-align: justify;
     font-size: 1rem;
     line-height: 1.5;
     font-weight: bold;
+    width: 40vw;
 }
 
-.organization-button{
+#organizationImage {
+    width: 12vw;
+}
+
+#jobDescriptionPoints {
+    font-size: 1.10vw;
+    font-weight: bold;
+    color: #8892B0;
+}
+
+.organization-button {
     display: grid;
     margin-top: 1vh;
     grid-template-columns: auto auto;
@@ -226,142 +301,166 @@ a{
     width: 10vw;
     font-size: 1.5rem;
 }
-#organization-button-previous:hover{
+
+#organization-button-previous:hover {
     cursor: pointer;
     color: white;
 }
 
-#aboutMePage{
+#aboutMePage {
     animation-duration: 2s;
     animation-name: "slide-down";
 }
 
-#organization-button-next:hover{
+#organization-button-next:hover {
     cursor: pointer;
     color: white;
 }
 
-.technumber{
+.technumber {
     display: inline;
     color: #51c0a4;
     font-size: 1rem;
 }
+
 #photo {
     text-align: center;
 }
 
-.photo{
+.photo {
     height: 30vh;
     background-color: rgb(238, 238, 238);
+    transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+    border: 2px solid #51c0a4;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
 }
+
+.photo:hover {
+    box-shadow: 12px 12px 2px 2px #51c0a4;
+}
+
+
 .projectsTable {
     display: grid;
     grid-template-columns: auto auto auto;
-    row-gap: 3vh;
-    column-gap: 3vh;
-    width: 40vw;
+    row-gap: 30px;
+    column-gap: 1vw;
     column-count: 3;
 }
 
-.project{
+.project {
     display: grid;
-    grid-template-rows: 25% 75% 20%;
+    grid-template-rows: 20% 60% 20%;
     align-content: center;
-    padding: 2vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 1vw;
     background-color: transparent;
     border: 2px solid white;
-    color:  white;
-    width: 19vw;
-    height: 40vh;
+    color: white;
+    width: 15vw;
+    height: 23vw;
+    cursor: pointer;
 }
 
-.projectTitle{
-    font-size: 1.2rem;
-    margin-top: 1vh;
-    color: #427388;
+.projectTitle {
+    font-size: 1.25vw;
+    color: #CCD6F6;
 }
 
-.tech{
+.tech {
     display: inline;
-    font-size: .8rem;
+    font-size: 0.85vw;
     padding-top: .1vh;
     padding-bottom: .1vh;
     padding-left: .4vh;
     padding-right: .4vh;
     font-weight: 800;
-    color:rgb(186, 180, 180)
+    color: #51c0a4
 }
 
-.loadbutton{
+.loadbutton {
     justify-self: center;
-    margin-top: 2vh;
+    margin-top: 30px;
 }
 
 
-#more-projects-button{
+#more-projects-button {
     width: 10vw;
-    height: 5vh;
+    height: 3vw;
     background-color: transparent;
-    border: solid 2px white;
-    color: white;
+    border: solid 2px #51c0a4;
+    color: #8892B0;
     font-weight: bold;
+    cursor: pointer;
+    transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+    font-size: 1.0vw;
 }
-#organizationPhoto{
+
+#more-projects-button:hover {
+    box-shadow: 8px 8px 2px 1px #e4e7e6;
+}
+
+#organizationPhoto {
     width: 12vw;
     height: 20vh;
     padding-left: 5%;
 }
 
-.FourRowGrid{
-    margin-top: 30vh;
+.FourRowGrid {
+    margin-top: 400px;
     display: grid;
+    grid-template-rows: auto auto;
     justify-self: center;
-    grid-template-rows: auto auto auto auto;
-    width: 65%;
+    width: 60%;
     row-gap: 3vh;
-    margin-bottom: 40vh;
+    margin-bottom: 300px;
 }
 
-.getInTouch{
-    display: grid;
-    font-size: 50px;
-    color: white;
+.getInTouch {
+    font-size: 2.5vw;
+    color: #CCD6F6;
     text-align: center;
 }
 
-.getInTouchDescription{
-    margin-top: -2vh;
-    display: flex;
-    justify-self: center;
-    text-align: center;
-    color: white;
-    font-size: 1.75rem;
-    letter-spacing: 2px;
-    width: 70%;
-}
-
-.getInTouchHeading{
+.getInTouchDescription {
+    margin-top: 1vw;
+    font-family: 'Open Sans', sans-serif;
+    color: #8892B0;
+    font-size: 1.2vw;
     text-align: center;
 }
 
-.getInTouchButton{
+
+.getInTouchButton {
     text-align: center;
+    margin-top: 2vw;
 }
-footer{
+
+.techCategory {
+    display: inline;
+}
+
+footer {
     color: white;
     display: grid;
     justify-self: center;
     margin-bottom: 1vh;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8vw;
 }
+
 #aboutme {
     color: rgb(255, 255, 255);
     font-size: 1.5rem;
     padding: 2%;
 }
 
-#aboutme:target{
+#aboutme:target {
     scroll-behavior: smooth;
 }
+
 #YORA {
     display: grid;
     justify-content: center;
@@ -391,17 +490,17 @@ footer{
     box-shadow: 2px 2px 2px;
 }
 
-#projectTitle {
-    font-size: 2rem;
-}
 
 .projectDescription {
-    text-align: justify;
-    font-size: 0.95rem;
+    text-align: left;
+    font-size: 0.95vw;
+    color: #8892B0;
 }
 
-.projectStack{
-    font-size: 0.95rem;
+.projectStack {
+    display: grid;
+    font-size: 0.95vw;
+    align-content: center;
 }
 
 #links {
@@ -410,8 +509,15 @@ footer{
 }
 
 #portfolioUrl {
-    text-decoration: none;
+    text-decoration: dashed;
     color: white;
+    transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+
+}
+
+#portfolioUrl:hover {
+    cursor: pointer;
+    color: #51c0a4;
 }
 
 .navlinkButton {
@@ -432,23 +538,21 @@ footer{
     text-shadow: 1px 1px 2px #427388;
 }
 
-#projectTable:hover{
-    cursor: pointer;
-}
-
 .messageButton:hover {
-    border: 1px solid;
-    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
-    outline-color: rgba(255, 255, 255, 0);
-    outline-offset: 15px;
+    box-shadow: 8px 8px 2px 1px #51c0a4;
 }
 
-#responsiveNavbar{
+#responsiveNavbarImage {
     height: 35px;
     width: 35px;
 }
 
-.projectScroll{
+.projectScroll {
     overflow-y: scroll;
 }
 
+#aboutMePageContent {
+    display: grid;
+    grid-template-columns: auto auto;
+    font-size: 2rem;
+}
