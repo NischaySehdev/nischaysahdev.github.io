@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nischay sehdev</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-responsive.css">
     <link rel="stylesheet" href="style-animation.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="precnnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,10 +19,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@650&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Rammetto+One&display=swap"
-        rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="Image/Capture.PNG">
 </head>
 
@@ -43,7 +42,7 @@
                     <div class="navnumber">04. </div>Contact
                 </li>
                 <li class="navlink" id="resumeNavLink">
-                    <div class="navnumber">05. </div><a href="resources/Nischay Sehdev.pdf" download>Resume</a>
+                    <button class="messageButton resumeButton" onclick="messageTo()">Resume</button>
                 </li>
             </ul>
         </div>
@@ -51,15 +50,19 @@
             <div id="socialLinksContainer">
                 <ul>
                     <li class="socialLinks"><a href="https://github.com/NischaySehdev" target="_blank"><img
-                                src="icons/icons8-github-30.png" alt="Githib" id="iconImage"></a></li>
+                                src="icons/icons8-github-30.png" alt="Githib" class="iconImage" id="iconImage"></a></li>
                     <li class="socialLinks"><a href="https://www.facebook.com/nischay.sehdev" target="_blank"><img
-                                src="icons/icons8-facebook-30.png" alt="Facebook" id="iconImage"></a></li>
+                                src="icons/icons8-facebook-30.png" alt="Facebook" class="iconImage" id="iconImage"></a>
+                    </li>
                     <li class="socialLinks"><a href="https://www.instagram.com/nischay_sehdev/" target="_blank"><img
-                                src="icons/icons8-instagram-30.png" alt="Instagram" id="iconImage"></a></li>
+                                src="icons/icons8-instagram-30.png" alt="Instagram" class="iconImage"
+                                id="iconImage"></a></li>
                     <li class="socialLinks"><a href="https://www.linkedin.com/in/nischay-sehdev" target="_blank"><img
-                                src="icons/icons8-linkedin-30.png" alt="Linkedin" id="iconImage"></a></li>
+                                src="icons/icons8-linkedin-30.png" alt="Linkedin" class="iconImage" id="iconImage"></a>
+                    </li>
                     <li class="socialLinks"><a href="https://twitter.com/SehdevNischay" target="_blank"><img
-                                src="icons/icons8-twitter-30.png" alt="Twitter" id="iconImage"></a></li>
+                                src="icons/icons8-twitter-30.png" alt="Twitter" class="iconImage" id="iconImage"></a>
+                    </li>
                 </ul>
             </div>
             <div class="frontPageContent">
@@ -70,15 +73,14 @@
                     Nischay Sehdev
                 </div>
                 <div id="professionHeadLine">
-                    I build exciting digital things.
+                    Builds exciting digital things.
                 </div>
                 <div id="descriptionHeadLine">
-                    I am a Full Stack Engineer who is passionate about creating beautiful digital things. I play Project
-                    leader, Project partner, teammate and mentor roles. Ping me if you want to make a your digital dream
-                    real.
+                    I am a Full Stack Engineer who is passionate about creating beautiful exciting digital things. Ping
+                    me or fill the below form if you want your digital dream real.
                 </div>
                 <div class="button">
-                    <button class="messageButton" onclick="messageTo()">Say Hi!</button>
+                    <button class="messageButton" onclick="messageTo()">Let's discuss</button>
                 </div>
             </div>
             <div id="websiteURlSideBar">
@@ -86,16 +88,14 @@
                     href="mailto: nischaysahdevoo8@gmail.com">nischaysahdevoo8@gmail.com</a>
             </div>
         </div>
-        <div class="TwoRowGrid" id="aboutMePage">
+        <div class="TwoRowGrid reveal" id="aboutMePage">
             <div class="pageTitle" id="aboutMePageTitle">
                 <div class="navnumber" id="subHeadingSerial">01.</div> About Me
             </div>
             <div class="contents" id="aboutMePageContent">
                 <div class="content">
                     An experienced Full-Stack Software Engineer who is passionate about creating digital and innovative
-                    things, I am a
-                    person who works on designing, development and maintenance but majorly in the software development
-                    scope. Although I
+                    things, created/creating several innovative end-to-end digital products. I
                     work for reputed organizations where my skills can be valued and where my ideas get liberty. In me
                     time, I also play
                     project leader and mentor as roles. Currently work in a
@@ -116,12 +116,15 @@
                 </div>
             </div>
         </div>
-        <div class="TwoRowGrid" id="workPage">
+        <div class="TwoRowGrid reveal" id="workPage">
             <div class="pageTitle">
                 <div class="navnumber" id="subHeadingSerial">02.</div> Where I've Worked
             </div>
             <div id="organization-title">
-                <a href="https://merkurgamingindia.com/" target="_blank">Merkur Gaming India</a> [May 2022 - Present]
+                <a href="https://merkurgamingindia.com/" target="_blank">
+                    Merkur Gaming India
+                </a>
+                [May 2022 - Present]
             </div>
             <div class="jobDescriptionTable">
                 <div id="content">
@@ -158,24 +161,26 @@
                     </ul>
                 </div>
                 <div class="image">
-                    <img id="organizationImage" src="Image/MerkurGamingIndia_logo.jpg" alt="" srcset="">
+                    <a href="https://merkurgamingindia.com/" target="_blank"><img id="organizationImage"
+                            src="Image/MerkurGamingIndia_logo.jpg" alt="" srcset=""></a>
                 </div>
             </div>
         </div>
-        <div class="TwoRowGrid" id="projectPage">
+        <div class="TwoRowGrid reveal" id="projectPage">
             <div class="pageTitle">
                 <div class="navnumber" id="subHeadingSerial">03.</div> Some Things I've Built
             </div>
             <div class="projectsTable" id="projectTable">
                 <div class="project" id="customerManagementSystem">
-                    <div class="projectTitle">Customer Management System</div>
-                    <div class="projectDescription projectScroll">
+                    <div class="projectTitle" id="customerManagementSystemTitle">Customer Management System
+                    </div>
+                    <div class="projectDescription scrollbar" id="customerManagementSystemDescription">
                         A standalone customer management desktop
                         application. It was designed to work collaboratively with e-commerce applications. It supports
                         basic features like a status
                         check, delivery status, return concerns, offer concerns, customer concerns etc.
                     </div>
-                    <div class="projectStack">
+                    <div class="projectStack" id="customerManagementSystemProjectStack">
                         <ul>
                             <li class="tech">Java</li>
                             <li class="tech">Mysql</li>
@@ -184,15 +189,15 @@
                     </div>
                 </div>
                 <div class="project" id="universityManagementSystem">
-                    <div class="projectTitle">University Management System</div>
-                    <div class="projectDescription projectScroll">
+                    <div class="projectTitle" id="universityManagementSystemTitle">University Management System</div>
+                    <div class="projectDescription scrollbar" id="universityManagementSystemDescription">
                         A university management web application by
                         which the university admins can manage their application available at the students. It helps the
                         students by providing an online platform for availing the services provided by the university.
                         For example:- term end results publishing,
                         ,assignment results publishing, notifications releasing, student centre allotments etc.
                     </div>
-                    <div class="projectStack">
+                    <div class="projectStack" id="universityManagementSystemProjectStack">
                         <ul>
                             <li class="tech">Php</li>
                             <li class="tech">Mysql</li>
@@ -202,13 +207,13 @@
                     </div>
                 </div>
                 <div class="project" id="ignouAnOfficialApplication">
-                    <div class="projectTitle">IGNOU : An Official application</div>
-                    <div class="projectDescription projectScroll">
+                    <div class="projectTitle" id="ignouAnOfficialApplicationTitle">IGNOU : An Official application</div>
+                    <div class="projectDescription scrollbar" id="ignouAnOfficialApplicationDescription">
                         A student management android
                         application which contains some necessary options which are related to the university services.
                         For example:-Student profile, Term-end result, Grade card etc.
                     </div>
-                    <div class="projectStack">
+                    <div class="projectStack" id="ignouAnOfficialApplicationprojectStack">
                         <ul>
                             <li class="tech">Java</li>
                             <li class="tech">Mysql</li>
@@ -217,12 +222,12 @@
                     </div>
                 </div>
                 <div class="project" id="messenger">
-                    <div class="projectTitle">Messenger</div>
-                    <div class="projectDescription projectScroll">
+                    <div class="projectTitle" id="messengerTitle">Messenger</div>
+                    <div class="projectDescription scrollbar" id="messengerDescription">
                         It contains restful apis for a social media application which provides user details like
                         comments, share counts, likes counts, download counts etc
                     </div>
-                    <div class="projectStack">
+                    <div class="projectStack" id="messengerProjectStack">
                         <ul>
                             <li class="tech">Mysql</li>
                             <li class="tech">Hiberate</li>
@@ -232,12 +237,12 @@
                     </div>
                 </div>
                 <div class="project" id="keepClone">
-                    <div class="projectTitle">Keep clone</div>
-                    <div class="projectDescription">
+                    <div class="projectTitle" id="keepCloneTitle">Keep clone</div>
+                    <div class="projectDescription scrollbar" id="keepCloneDescription">
                         It is a web application which is the clone of Google keep. It can save the note, delete the
                         note, edit the note and view the note.
                     </div>
-                    <div class="projectStack">
+                    <div class="projectStack" id="keepCloneProjectStack">
                         <ul>
                             <li class="tech">Mysql</li>
                             <li class="tech">Hiberate</li>
@@ -247,12 +252,12 @@
                     </div>
                 </div>
                 <div class="project" id="movieCatalog">
-                    <div class="projectTitle">Movie catalog</div>
-                    <div class="projectDescription projectScroll">
+                    <div class="projectTitle" id="movieCatalogTitle">Movie catalog</div>
+                    <div class="projectDescription scrollbar" id="movieCatalogDescription">
                         It contains restful apis for movie catelog web application which provide detailed information
                         for the movies for example movie ratings, cast, budget etc.
                     </div>
-                    <div class="projectStack">
+                    <div class="projectStack" id="movieCatalogProjectStack">
                         <ul>
                             <li class="tech">Microservices</li>
                             <li class="tech">Hiberate</li>
@@ -266,7 +271,7 @@
                 <button id="more-projects-button" type="submit">Load more</button>
             </div>
         </div>
-        <div class="FourRowGrid" id="contactPage">
+        <div class="FourRowGrid reveal" id="contactPage">
             <div class="pageTitle getInTouchHeading">
                 <div class="navnumber" id="subHeadingSerial">04.</div> What's Next?
             </div>

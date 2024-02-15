@@ -90,22 +90,22 @@ document.getElementById("more-projects-button").addEventListener("click", () => 
     }
 })
 
-document.getElementById("customerManagementSystem").addEventListener("click", () => {
+document.getElementById("customerManagementSystemTitle").addEventListener("click", () => {
     window.location.href = customerManagementSystemLink;
 })
-document.getElementById("universityManagementSystem").addEventListener("click", () => {
+document.getElementById("universityManagementSystemTitle").addEventListener("click", () => {
     window.location.href = universityManagementSystemLink;
 })
-document.getElementById("ignouAnOfficialApplication").addEventListener("click", () => {
+document.getElementById("ignouAnOfficialApplicationTitle").addEventListener("click", () => {
     // window.location.href = customerManagementSystemLink;
 })
-document.getElementById("messenger").addEventListener("click", () => {
+document.getElementById("messengerTitle").addEventListener("click", () => {
     // window.location.href = customerManagementSystemLink;
 })
-document.getElementById("movieCatalog").addEventListener("click", () => {
+document.getElementById("keepCloneTitle").addEventListener("click", () => {
     // window.location.href = customerManagementSystemLink;
 })
-document.getElementById("keepClone").addEventListener("click", () => {
+document.getElementById("movieCatalogTitle").addEventListener("click", () => {
     // window.location.href = customerManagementSystemLink;
 })
 
@@ -369,4 +369,103 @@ function removeresponsiveNavbarImage(willNavbarBeShown) {
         document.getElementsByClassName("loadbutton")[0].setAttribute("class", "loadbutton");
         document.getElementsByClassName("FourRowGrid")[0].setAttribute("class", "FourRowGrid");
     }
+}
+// Animations
+let iconImages = document.getElementsByClassName("iconImage");
+for (const iconImage of iconImages) {
+    iconImage.addEventListener("mouseenter", () => {
+        iconImage.className = "slide-top";
+        setTimeout('', 5000);
+    })
+    iconImage.addEventListener("mouseleave", () => {
+        iconImage.className = "";
+        setTimeout('', 5000);
+    })
+}
+
+let projectTitles = document.getElementsByClassName("projectTitle");
+for (const projectTitle of projectTitles) {
+    projectTitle.addEventListener("mouseenter", () => {
+        projectTitle.classList.toggle("slide-top");
+        setTimeout('', 5000);
+    })
+    projectTitle.addEventListener("mouseleave", () => {
+        projectTitle.classList.toggle("slide-top");
+        setTimeout('', 5000);
+    })
+}
+let navLinks = ["#aboutMeNavLink", "#workNavLink", "#projectNavLink", "#contactNavLink", "#resumeNavLink"];
+for (const navLink of navLinks) {
+    let navLinkELement = document.querySelector(navLink);
+    navLinkELement.addEventListener("mouseenter", () => {
+        navLinkELement.classList.toggle("slide-top");
+        setTimeout('', 5000);
+    })
+    console.log(navLinkELement.classList);
+
+    navLinkELement.addEventListener("mouseleave", () => {
+        setTimeout('', 5000);
+        navLinkELement.classList.toggle("slide-top");
+    })
+}
+
+document.getElementById("websiteURlSideBar").addEventListener("mouseenter", () => {
+    document.getElementById("websiteURlSideBar").className = "slide-top";
+})
+
+document.getElementById("websiteURlSideBar").addEventListener("mouseleave", () => {
+    document.getElementById("websiteURlSideBar").className = "";
+})
+
+document.getElementById("organization-title").addEventListener("mouseenter", () => {
+    document.getElementById("organization-title").className = "slide-top";
+})
+document.getElementById("organization-title").addEventListener("mouseleave", () => {
+    document.getElementById("organization-title").className = "";
+})
+
+document.getElementById("organization-title").addEventListener("mouseenter", () => {
+    document.getElementById("organization-title").className = "slide-top";
+})
+document.getElementById("organization-title").addEventListener("mouseleave", () => {
+    document.getElementById("organization-title").className = "";
+})
+
+
+function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+
+    for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 150;
+
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+        }
+
+        else {
+            reveals[i].classList.remove("active");
+        }
+    }
+}
+
+window.addEventListener("scroll", reveal);
+reveal();
+let loadMoreContentMap = {
+    "loadMoreContentCMS": ["customerManagementSystemDescription", "customerManagementSystemTitle", "customerManagementSystemProjectStack", "customerManagementSystem"],
+    "loadMoreContentUMS": ["universityManagementSystemDescription", "universityManagementSystemTitle", "universityManagementSystemProjectStack", "universityManagementSystem"],
+    "loadMoreContentIGNOU": ["ignouAnOfficialApplicationDescription", "ignouAnOfficialApplicationTitle", "customerManagementSystemProjectStack", "ignouAnOfficialApplication"],
+    "loadMoreContentMessenger": ["messengerDescription", "messengerTitle", "messengerProjectStack", "messenger"],
+    "loadMoreContentKeepClone": ["keepCloneDescription", "keepCloneTitle", "keepCloneProjectStack", "keepClone"],
+    "loadMoreContentMovieCatalog": ["movieCatalogDescription", "movieCatalogTitle", "movieCatalogProjectStack", "movieCatalog"]
+}
+
+function addSlideTopAnimation(loadMoreContentButtonId) {
+    document.getElementById(loadMoreContentButtonId).addEventListener("mouseenter", () => {
+        document.getElementById(loadMoreContentButtonId).classList.toggle("slide-top");
+    })
+    document.getElementById(loadMoreContentButtonId).addEventListener("mouseleave", () => {
+        document.getElementById(loadMoreContentButtonId).classList.toggle("slide-top")
+    })
 }

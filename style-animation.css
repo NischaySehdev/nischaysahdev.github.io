@@ -1,155 +1,59 @@
-/* For large screens  */
-@media screen and (max-width: 1645px) {}
+.slide-top {
+    -webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
 
-@media screen and (max-width: 412px) {
-    #responsiveNavbarImage {
-        margin-top: 10px;
-        display: grid;
-        width: 95vw;
-        justify-content: right;
+.fade-in-top {
+    -webkit-animation: fade-in-top 1.0s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in-top 1.0s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes slide-top {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
     }
 
-    #responsiveNavbarButton {
-        width: 10vw;
+    100% {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes slide-top {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
     }
 
-    #navbarContainer {
-        display: none;
+    100% {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes fade-in-top {
+    0% {
+        -webkit-transform: translateY(-50px);
+        transform: translateY(-50px);
+        opacity: 0;
     }
 
-    #frontPageBanner {
-        margin-top: 40vw;
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 12;
     }
+}
 
-    #socialLinksContainer {
-        display: none;
-    }
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 2s all ease;
+}
 
-    #websiteURlSideBar {
-        display: none;
-    }
-
-    .frontPageContent {
-        margin-left: 5vw;
-        row-gap: 5px;
-    }
-
-    #greetingsHeadline {
-        font-size: 3.0vw;
-    }
-
-    #nameHeadLine {
-        font-size: 8.0vw;
-    }
-
-    #professionHeadLine {
-        font-size: 7.5vw;
-    }
-
-    #descriptionHeadLine {
-        text-align: justify;
-        font-size: 2.6vw;
-        width: 100%;
-    }
-
-    .button {
-        margin-top: 20px;
-    }
-
-    .messageButton {
-        font-size: 2.7vw;
-        height: 8vw;
-        width: 30vw;
-    }
-
-    .pageTitle {
-        font-size: 4.5vw;
-    }
-
-    #subHeadingSerial {
-        font-size: 3.0vw;
-    }
-
-    .content {
-        width: 90vw;
-        font-size: 3.5vw;
-    }
-
-    #organization-title {
-        font-size: 4.0vw;
-    }
-
-    .jobDescriptionTable {
-        grid-template-columns: auto;
-    }
-
-    #organizationImage {
-        display: none;
-    }
-
-    #content {
-        width: 90vw;
-    }
-
-    #jobDescriptionPoints {
-        font-size: 3.5vw;
-    }
-
-    .navnumber {
-        font-size: 2.5vw;
-    }
-
-    .projectsTable {
-        grid-template-columns: auto auto;
-        column-count: 2;
-        width: 90vw;
-        justify-content: center;
-        column-gap: 3vw;
-    }
-
-    .project {
-        width: 40vw;
-        height: 60vw;
-    }
-
-    .projectTitle {
-        font-size: 3.7vw;
-    }
-
-    .projectDescription {
-        font-size: 2.55vw;
-    }
-
-    .tech {
-        font-size: 2vw;
-    }
-
-    #more-projects-button {
-        width: 20vw;
-        height: 6vw;
-        font-size: 2.0vw;
-    }
-
-    .FourRowGrid {
-        width: 90vw;
-        row-gap: 30px;
-    }
-
-    .getInTouch {
-        font-size: 5.5vw;
-    }
-
-    .getInTouchDescription {
-        font-size: 2.6vw;
-    }
-
-    .getInTouchContainer {
-        display: grid;
-        grid-template-rows: auto auto auto;
-        row-gap: 10px;
-    }
-
-    footer {
-        font-size: 1.8vw;
-    }
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
 }

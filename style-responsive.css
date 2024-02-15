@@ -1,0 +1,156 @@
+/* For large screens  */
+@media screen and (max-width: 1645px) {}
+
+@media screen and (max-width: 412px) {
+    #responsiveNavbarImage {
+        margin-top: 10px;
+        display: grid;
+        width: 95vw;
+        justify-content: right;
+    }
+
+    #responsiveNavbarButton {
+        width: 10vw;
+    }
+
+    #navbarContainer {
+        display: none;
+    }
+
+    #frontPageBanner {
+        margin-top: 40vw;
+    }
+
+    #socialLinksContainer {
+        display: none;
+    }
+
+    #websiteURlSideBar {
+        display: none;
+    }
+
+    .frontPageContent {
+        margin-left: 5vw;
+        row-gap: 5px;
+    }
+
+    #greetingsHeadline {
+        font-size: 3.0vw;
+    }
+
+    #nameHeadLine {
+        font-size: 8.0vw;
+        font-weight: 900;
+    }
+
+    #professionHeadLine {
+        font-size: 7.5vw;
+    }
+
+    #descriptionHeadLine {
+        text-align: justify;
+        font-size: 2.6vw;
+        width: 100%;
+    }
+
+    .button {
+        margin-top: 20px;
+    }
+
+    .messageButton {
+        font-size: 2.7vw;
+        height: 8vw;
+        width: 30vw;
+    }
+
+    .pageTitle {
+        font-size: 4.5vw;
+    }
+
+    #subHeadingSerial {
+        font-size: 3.0vw;
+    }
+
+    .content {
+        width: 90vw;
+        font-size: 3.5vw;
+    }
+
+    #organization-title {
+        font-size: 4.0vw;
+    }
+
+    .jobDescriptionTable {
+        grid-template-columns: auto;
+    }
+
+    #organizationImage {
+        display: none;
+    }
+
+    #content {
+        width: 90vw;
+    }
+
+    #jobDescriptionPoints {
+        font-size: 3.5vw;
+    }
+
+    .navnumber {
+        font-size: 2.5vw;
+    }
+
+    .projectsTable {
+        grid-template-columns: auto auto;
+        column-count: 2;
+        width: 90vw;
+        justify-content: center;
+        column-gap: 3vw;
+    }
+
+    .project {
+        width: 40vw;
+        height: 60vw;
+    }
+
+    .projectTitle {
+        font-size: 3.7vw;
+    }
+
+    .projectDescription {
+        font-size: 2.55vw;
+    }
+
+    .tech {
+        font-size: 2vw;
+    }
+
+    #more-projects-button {
+        width: 20vw;
+        height: 6vw;
+        font-size: 2.0vw;
+    }
+
+    .FourRowGrid {
+        width: 90vw;
+        row-gap: 30px;
+    }
+
+    .getInTouch {
+        font-size: 5.5vw;
+    }
+
+    .getInTouchDescription {
+        font-size: 2.6vw;
+    }
+
+    .getInTouchContainer {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        row-gap: 10px;
+    }
+
+    footer {
+        font-size: 1.8vw;
+    }
+}
