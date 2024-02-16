@@ -18,7 +18,7 @@
     }
 
     #frontPageBanner {
-        margin-top: 40vw;
+        margin-top: 30vw;
     }
 
     #socialLinksContainer {
@@ -31,15 +31,15 @@
 
     .frontPageContent {
         margin-left: 5vw;
-        row-gap: 5px;
+        row-gap: 10px;
     }
 
     #greetingsHeadline {
-        font-size: 3.0vw;
+        font-size: 2.5vw;
     }
 
     #nameHeadLine {
-        font-size: 8.0vw;
+        font-size: 9.0vw;
         font-weight: 900;
     }
 
@@ -48,13 +48,14 @@
     }
 
     #descriptionHeadLine {
+        margin-top: 5px;
         text-align: justify;
-        font-size: 2.6vw;
+        font-size: 3.6vw;
         width: 100%;
     }
 
     .button {
-        margin-top: 20px;
+        margin-top: 10px;
     }
 
     .messageButton {
@@ -111,6 +112,7 @@
     .project {
         width: 40vw;
         height: 60vw;
+        box-shadow: 0px 5px 10px 5px rgb(0, 0, 0);
     }
 
     .projectTitle {
@@ -128,6 +130,7 @@
     #more-projects-button {
         width: 20vw;
         height: 6vw;
+        border: solid 1px #51c0a4;
         font-size: 2.0vw;
     }
 
