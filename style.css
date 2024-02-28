@@ -57,8 +57,8 @@ a {
     position: sticky;
     display: flex;
     justify-content: right;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
     box-shadow: 0px 5px 50px 10px rgb(0, 0, 0);
     -webkit-animation: fade-in-top 1.0s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     animation: fade-in-top 1.0s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
@@ -166,11 +166,12 @@ a {
     grid-template-rows: auto auto auto auto auto;
     margin-left: 15vw;
     margin-right: 12vw;
+    align-items: center;
     font-family: 'Open Sans', sans-serif;
 }
 
 #greetingsHeadline {
-    font-size: .9vw;
+    font-size: 1.1vw;
     word-spacing: 5px;
     color: #51c0a4;
 }
@@ -188,19 +189,18 @@ a {
 }
 
 #descriptionHeadLine {
-    font-weight: lighter;
-    margin-top: 20px;
+    font-weight: bold;
     font-size: 1.1vw;
     text-align: justify;
     font-family: 'Open Sans', sans-serif;
-    color: #3B4862;
+    color: #8892B0;
     width: 40%;
 }
 
 .messageButton {
     height: 3vw;
     width: 10vw;
-    border-radius: 7px;
+    border-radius: .5vw;
     cursor: pointer;
     color: #51c0a4;
     font-size: 1vw;
@@ -272,6 +272,8 @@ a {
 
 .contents {
     display: grid;
+    grid-template-columns: 45vw auto;
+    column-gap: 5vw;
 }
 
 .content {
@@ -280,9 +282,19 @@ a {
     text-align: justify;
     font-size: 1.10vw;
     font-weight: bold;
-    width: 50vw;
+    width: 45vw;
     letter-spacing: .01rem;
     color: #8892B0;
+}
+
+.underline {
+    display: inline-block;
+    color: #51c0a4;
+}
+
+.underline:hover {
+    cursor: pointer;
+    color: #51c0a4;
 }
 
 .workProject {
@@ -306,9 +318,9 @@ a {
 
 #organizationImage {
     width: 12vw;
-    padding: 10px;
+    padding: .4vw;
     border-radius: 5px;
-    border: #51c0a4 5px solid;
+    border: #51c0a4 .2vw solid;
     opacity: .5;
     transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
     filter: grayscale(100%);
@@ -427,7 +439,7 @@ a {
 #more-projects-button {
     width: 10vw;
     height: 3vw;
-    border-radius: 7px;
+    border-radius: .5vw;
     background-color: transparent;
     border: solid 2px #51c0a4;
     color: #51c0a4;

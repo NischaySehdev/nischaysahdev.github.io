@@ -1,7 +1,9 @@
 /* For large screens  */
 @media screen and (max-width: 1645px) {}
 
-@media screen and (max-width: 412px) {
+@media screen and (max-height: 1200px) {}
+
+@media screen and (max-width: 415px) {
     #responsiveNavbarImage {
         margin-top: 10px;
         display: grid;
@@ -73,7 +75,7 @@
     }
 
     .content {
-        width: 90vw;
+        width: 95vw;
         font-size: 3.5vw;
     }
 
@@ -89,8 +91,14 @@
         display: none;
     }
 
+    .contents {
+        display: grid;
+        grid-template-columns: 50vw;
+        column-gap: 0vw;
+    }
+
     #content {
-        width: 90vw;
+        width: 95vw;
     }
 
     #jobDescriptionPoints {
@@ -104,7 +112,7 @@
     .projectsTable {
         grid-template-columns: auto auto;
         column-count: 2;
-        width: 90vw;
+        width: 95vw;
         justify-content: center;
         column-gap: 3vw;
     }

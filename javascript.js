@@ -31,6 +31,11 @@ function calculateMargin() {
         return 40;
     }
 }
+document.getElementById("projects").addEventListener("click", () => {
+    let projectOffsetTop = document.getElementById("projectPage").offsetTop;
+    let projectOffsetHeight = document.getElementById("projectPage").offsetHeight;
+    window.scrollBy(0, projectOffsetTop - projectOffsetHeight);
+})
 document.getElementById("aboutMeNavLink").addEventListener("click", () => {
     removeresponsiveNavbarImage(true);
     window.scrollBy(0, document.getElementById("aboutMePage").offsetTop - topMargin);
@@ -391,6 +396,19 @@ for (const projectTitle of projectTitles) {
         setTimeout('', 5000);
     })
 }
+
+let underlines = document.getElementsByClassName("underline");
+for (const underline of underlines) {
+    console.log(underline);
+    underline.addEventListener("mouseenter", () => {
+        underline.classList.toggle("slide-top");
+        setTimeout('', 5000);
+    })
+    underline.addEventListener("mouseleave", () => {
+        underline.classList.toggle("slide-top");
+        setTimeout('', 5000);
+    })
+}
 let navLinks = ["#aboutMeNavLink", "#workNavLink", "#projectNavLink", "#contactNavLink", "#resumeNavLink"];
 for (const navLink of navLinks) {
     let navLinkELement = document.querySelector(navLink);
@@ -465,4 +483,19 @@ function addSlideTopAnimation(loadMoreContentButtonId) {
     document.getElementById(loadMoreContentButtonId).addEventListener("mouseleave", () => {
         document.getElementById(loadMoreContentButtonId).classList.toggle("slide-top")
     })
+}
+
+document.getElementById("indiraGandhiNationOpenUniversityLine").addEventListener("click", () => {
+    window.location.href = "http://ignou.ac.in/";
+})
+
+document.getElementById("nationalInstitueOfElectronicAndInformationTechnologyHeadline").addEventListener("click", () => {
+    window.location.href = "https://www.nielit.gov.in/messageTo";
+})
+
+function downloadResume() {
+    let anchorTagElement = document.createElement("a");
+    anchorTagElement.href = "/resources/Nischay Sehdev.pdf"
+    anchorTagElement.download = true;
+    anchorTagElement.click();
 }
