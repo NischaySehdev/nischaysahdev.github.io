@@ -16,6 +16,7 @@ html {
     background-color: #0a192f;
     width: max-content;
     border-radius: 5px;
+    justify-content: center;
 }
 
 /* Navbar component starts from here */
@@ -134,12 +135,10 @@ a {
     display: grid;
     font-weight: bolder;
     grid-template-columns: auto auto auto;
-    margin-top: 180px;
     color: white;
     width: 100vw;
     line-height: 1.5;
     margin-top: 15vh;
-    margin-bottom: 50px;
     -webkit-animation: fade-in-top 1.0s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     animation: fade-in-top 1.0s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
@@ -167,6 +166,8 @@ a {
     margin-left: 15vw;
     margin-right: 12vw;
     align-items: center;
+    justify-self: center;
+    justify-content: center;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -174,27 +175,33 @@ a {
     font-size: 1.1vw;
     word-spacing: 5px;
     color: #51c0a4;
+    /* background-color: blueviolet; */
 }
 
 #nameHeadLine {
     font-size: 5.0vw;
     color: #CCD6F6;
-    margin-bottom: -12px;
+    margin-bottom: -1.5vw;
+    /* background-color: red; */
 }
 
 #professionHeadLine {
     font-family: 'Open Sans', sans-serif;
     font-size: 4.3vw;
     color: #8892B0;
+    /* background-color: brown; */
 }
 
 #descriptionHeadLine {
     font-weight: bold;
-    font-size: 1.1vw;
+    font-size: 1.15vw;
     text-align: justify;
     font-family: 'Open Sans', sans-serif;
     color: #8892B0;
     width: 40%;
+    padding-left: .4vw;
+    /* background-color: aqua; */
+    /* margin-top: 1.2vw; */
 }
 
 .messageButton {
@@ -204,6 +211,7 @@ a {
     cursor: pointer;
     color: #51c0a4;
     font-size: 1vw;
+    margin-top: 0.7vw;
     font-family: 'IBM Plex Mono', monospace;
     background-color: transparent;
     border: #51c0a4 1px solid;
@@ -212,6 +220,7 @@ a {
 
 .resumeButton {
     height: 2.5vw;
+    margin-top: 0vw;
     width: 7vw;
 }
 
@@ -234,7 +243,7 @@ a {
 
 /* Checkout button */
 .button {
-    margin-top: 40px;
+    margin-top: 2vw;
 }
 
 /* Next page just after the front page */
@@ -280,8 +289,8 @@ a {
     align-self: center;
     margin-top: 2vh;
     text-align: justify;
-    font-size: 1.10vw;
-    font-weight: bold;
+    font-size: 1.20vw;
+    font-weight: lighter;
     width: 45vw;
     letter-spacing: .01rem;
     color: #8892B0;
@@ -310,7 +319,7 @@ a {
 #content {
     margin-top: 20px;
     text-align: justify;
-    font-size: 1rem;
+    font-size: 2.00vw;
     line-height: 1.5;
     font-weight: bold;
     width: 40vw;
@@ -334,8 +343,8 @@ a {
 }
 
 #jobDescriptionPoints {
-    font-size: 1.10vw;
-    font-weight: bold;
+    font-size: 1.20vw;
+    font-weight: 100;
     color: #8892B0;
 }
 
