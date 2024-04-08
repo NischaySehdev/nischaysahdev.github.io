@@ -8,6 +8,9 @@ const facebookLink = "https://www.facebook.com/nischay.sehdev";
 const instagramLink = "https://www.instagram.com/nischay_sehdev/";
 const linkedInLink = "https://www.linkedin.com/in/nischay-sehdev";
 const twitterLink = "https://twitter.com/SehdevNischay";
+const pustakalyaBhawanLink = "";
+const ignouHelpDeskLink = "";
+
 let isNavBarShow = false;
 let aboutMePageContainer = document.getElementById("aboutMePage");
 let topMargin = calculateMargin();
@@ -53,57 +56,115 @@ document.getElementById("contactNavLink").addEventListener("click", () => {
     removeresponsiveNavbarImage(true);
     window.scrollBy(0, document.getElementById("contactPage").offsetTop);
 })
-function messageTo() {
-    window.location.href = "mailto:nischaysahdevoo8@gmail.com?subject = Feedback&body = Message";
+
+document.getElementById("left-navigation-button").addEventListener("click", () => showWorkExperience("previous"));
+document.getElementById("right-navigation-button").addEventListener("click", () => showWorkExperience("next"));
+
+function showWorkExperience(reuiredWorkExperience) {
+    let currentOrganizationName = document.getElementById("organization-title").children[0].innerText;
+    let currentOrganizationId = getCurrentOrganizationIdBy(currentOrganizationName)
+    let requiredOrganizationId = 0;
+    if (reuiredWorkExperience == "previous") {
+        requiredOrganizationId = --currentOrganizationId;
+    }
+    else if (reuiredWorkExperience == "next") {
+        requiredOrganizationId = ++currentOrganizationId;
+    } else {
+        console.error("Error in work experience module.");
+    }
+    changeJobDescription(requiredOrganizationId, reuiredWorkExperience)
 }
-document.getElementById("more-projects-button").addEventListener("click", () => {
-    let projectTable = document.getElementById("projectTable");
-    let lastProject = projectTable.children[projectTable.childElementCount - 1].children[0].innerHTML;
-    let projectId = getProjectId(lastProject);
-    while (true) {
-        if (projectList.hasOwnProperty(++projectId)) {
-            let project = document.createElement('div');
-            project.className = "project";
-            project.id = projectList[projectId].projectTitle;
-            let projectTitle = document.createElement("div");
-            projectTitle.className = "projectTitle";
-            projectTitle.innerText = projectList[projectId].projectTitle;
-            project.appendChild(projectTitle);
-            let projectDescription = document.createElement("div");
-            projectDescription.className = "projectDescription";
-            projectDescription.innerText = projectList[projectId].projectDescription;
-            console.log(projectList[projectId]);
-            project.appendChild(projectDescription);
-            let projectStack = document.createElement("div");
-            let techList = document.createElement("ul");
-            let techStack = projectList[projectId].projectTechStack;
-            techStack = techStack.split(", ");
-            let techStackInnerHtml = "";
-            techStack.forEach(tech => {
-                techStackInnerHtml += "<li class=\"tech\">" + tech + ", </li>";
-            });
-            techList.innerHTML = techStackInnerHtml;
-            projectStack.appendChild(techList);
-            project.appendChild(projectStack);
-            projectTable.appendChild(project);
-        } else {
-            let dialogBox = document.getElementById("dialog");
-            dialogBox.children[1].innerHTML = "More projects will be listed very soon.."
-            window.dialog.showModal();
-            break;
+function changeJobDescription(requiredOrganizationId, nextOrPrevious) {
+    if (!jobDescription.hasOwnProperty(requiredOrganizationId)) {
+        message = nextOrPrevious == "previous" ?
+            "<b>" + jobDescription[requiredOrganizationId + 1].title + "</b>" + "was my first organization.." :
+            "<b> " + jobDescription[requiredOrganizationId - 1].title + "</b > " + "is my last organization..";
+        document.getElementById("dialog").children[1].innerHTML = message;
+        window.dialog.showModal();
+    }
+    else {
+        document.getElementById("organization-title").innerHTML =
+            "<a href=\"" + jobDescription[requiredOrganizationId].webUrl + "\">"
+            + jobDescription[requiredOrganizationId].title + "</a>"
+            + jobDescription[requiredOrganizationId].duration
+        let index = 1;
+        let jobDescriptionPoints = "";
+        jobDescription[requiredOrganizationId].description.forEach(point => {
+            jobDescriptionPoints += "<li><div class=\"navnumber\">0" + (index++) + ".</div>" + point + ".</li>"
+        });
+        document.getElementById("jobDescriptionPoints").innerHTML = jobDescriptionPoints;
+    }
+}
+
+function getCurrentOrganizationIdBy(organizationName) {
+    for (let [organizationId, organization] of Object.entries(jobDescription)) {
+        if (organization.title == organizationName) {
+            return organizationId;
         }
     }
+}
+
+function messageTo() {
+    window.location.href = "mailto:nischaysahdevoo8@gmail.com?subject = Feedback&body = Message";
+    // let contactForm = document.getElementsByClassName("contact-form")[0];
+    // contactForm.style.display = "inline";
+    // document.getElementsByClassName("frontPageContent")[0].setAttribute("class", "blur frontPageContent");
+    // document.getElementsByClassName("TwoRowGrid")[0].setAttribute("class", "blur TwoRowGrid");
+    // document.getElementsByClassName("TwoRowGrid")[1].setAttribute("class", "blur TwoRowGrid");
+    // document.getElementsByClassName("TwoRowGrid")[2].setAttribute("class", "blur TwoRowGrid");
+    // document.getElementsByClassName("loadbutton")[0].setAttribute("class", "blur loadbutton");
+    // document.getElementsByClassName("FourRowGrid")[0].setAttribute("class", "blur FourRowGrid");
+
+}
+document.getElementById("moreProductsBtn").addEventListener("click", () => {
+    let message = "More products are coming soon..";
+    showDialogBox(message);
+})
+document.getElementById("moreProjectsBtn").addEventListener("click", () => {
+    let message = "Didn't get time for fun..";
+    showDialogBox(message);
+    // let projectTable = document.getElementById("projectTable");
+    // let lastProject = projectTable.children[projectTable.childElementCount - 1].children[0].innerHTML;
+    // let projectId = getProjectId(lastProject);
+    // while (true) {
+    //     if (projectList.hasOwnProperty(++projectId)) {
+    //         let project = document.createElement('div');
+    //         project.className = "project";
+    //         project.id = projectList[projectId].projectTitle;
+    //         let projectTitle = document.createElement("div");
+    //         projectTitle.className = "projectTitle";
+    //         projectTitle.innerText = projectList[projectId].projectTitle;
+    //         project.appendChild(projectTitle);
+    //         let projectDescription = document.createElement("div");
+    //         projectDescription.className = "projectDescription";
+    //         projectDescription.innerText = projectList[projectId].projectDescription;
+    //         console.log(projectList[projectId]);
+    //         project.appendChild(projectDescription);
+    //         let projectStack = document.createElement("div");
+    //         let techList = document.createElement("ul");
+    //         let techStack = projectList[projectId].projectTechStack;
+    //         techStack = techStack.split(", ");
+    //         let techStackInnerHtml = "";
+    //         techStack.forEach(tech => {
+    //             techStackInnerHtml += "<li class=\"tech\">" + tech + ", </li>";
+    //         });
+    //         techList.innerHTML = techStackInnerHtml;
+    //         projectStack.appendChild(techList);
+    //         project.appendChild(projectStack);
+    //         projectTable.appendChild(project);
+    //     } else {
+    //         let message = "More projects will be listed very soon..";
+    //         showDialogBox(message);
+    //         break;
+    //     }
+    // }
 })
 
-document.getElementById("customerManagementSystemTitle").addEventListener("click", () => {
-    window.location.href = customerManagementSystemLink;
-})
-document.getElementById("universityManagementSystemTitle").addEventListener("click", () => {
-    window.location.href = universityManagementSystemLink;
-})
-document.getElementById("ignouAnOfficialApplicationTitle").addEventListener("click", () => {
-    // window.location.href = customerManagementSystemLink;
-})
+function showDialogBox(dialogBoxMessage) {
+    let dialogBox = document.getElementById("dialog");
+    dialogBox.children[1].innerHTML = dialogBoxMessage;
+    window.dialog.showModal();
+}
 document.getElementById("messengerTitle").addEventListener("click", () => {
     // window.location.href = customerManagementSystemLink;
 })
@@ -121,38 +182,7 @@ if (window.outerWidth <= 820) {
     aboutMePageContainer.appendChild(aboutMePageContent);
 }
 
-function changeJobDescription(index) {
-    let dialogBox = document.getElementById("dialog");
-    let currentOrganization = document.getElementById("organization-title").children[0].innerHTML;
-    let organizationId = Number(getOrganizationId(currentOrganization));
-    if (!jobDescription.hasOwnProperty(organizationId + index)) {
-        if (index == -1) {
-            dialogBox.children[1].innerHTML = "<b>" + jobDescription[organizationId].title + "</b>" + " was my first organization.."
-        }
-        else {
-            dialogBox.children[1].innerHTML = "<b>" + jobDescription[organizationId].title + "</b>" + " is my last organization.."
-        }
-        window.dialog.showModal();
-    }
-    else {
-        document.getElementById("organization-title").innerHTML = "<a href=\"#\">" + jobDescription[organizationId + index].title + "</a>" + jobDescription[organizationId + index].duration
-        document.getElementById("jobDescriptionPoints").innerHTML = "";
-        let jobDescriptionIndex = 1;
-        let jobDescriptionPoints = "";
-        jobDescription[organizationId + index].description.forEach(point => {
-            jobDescriptionPoints += "<li><div class=\"navnumber\">0" + (jobDescriptionIndex++) + ".</div>" + point + ".</li>"
-        });
-        document.getElementById("jobDescriptionPoints").innerHTML = jobDescriptionPoints;
-    }
-}
 
-function getOrganizationId(organizationName) {
-    for (let [organizationId, organization] of Object.entries(jobDescription)) {
-        if (organization.title == organizationName) {
-            return organizationId;
-        }
-    }
-}
 function getProjectId(lastProject) {
     for (let [id, project] of Object.entries(projectList)) {
         if (project.projectTitle == lastProject) {
@@ -399,7 +429,6 @@ for (const projectTitle of projectTitles) {
 
 let underlines = document.getElementsByClassName("underline");
 for (const underline of underlines) {
-    console.log(underline);
     underline.addEventListener("mouseenter", () => {
         underline.classList.toggle("slide-top");
         setTimeout('', 5000);
@@ -416,7 +445,6 @@ for (const navLink of navLinks) {
         navLinkELement.classList.toggle("slide-top");
         setTimeout('', 5000);
     })
-    console.log(navLinkELement.classList);
 
     navLinkELement.addEventListener("mouseleave", () => {
         setTimeout('', 5000);
@@ -424,6 +452,13 @@ for (const navLink of navLinks) {
     })
 }
 
+let inputFieldIndexs = [0, 1, 2];
+document.getElementById("section_" + 0).setAttribute("class", "section section-visible");
+for (const index of inputFieldIndexs) {
+    document.getElementById("section_" + index + "_input").addEventListener("input", () => {
+        document.getElementById("section_" + (index + 1)).setAttribute("class", "section section-visible");
+    })
+}
 document.getElementById("websiteURlSideBar").addEventListener("mouseenter", () => {
     document.getElementById("websiteURlSideBar").className = "slide-top";
 })
@@ -499,3 +534,31 @@ function downloadResume() {
     anchorTagElement.download = true;
     anchorTagElement.click();
 }
+
+document.getElementById("pustakalayaBhawanReferenceImage").addEventListener("click", () => {
+    window.location.href = pustakalyaBhawanLink;
+})
+document.getElementById("ignouHelpDeskReferenceImage").addEventListener("click", () => {
+    window.location.href = ignouHelpDeskLink;
+})
+
+document.getElementById("logo").addEventListener("click", () => {
+    window.location.href = "https://www.nischaysehdev.com/"
+})
+// contactForm();
+// function contactForm() {
+//     let firstElementIndex = 0;
+//     let sections = document.getElementsByClassName("section");
+//     for (let index = 0; index < sections.length - 1; index++) {
+//         let isFirstOrLastElement = (index == firstElementIndex);
+//         if (isFirstOrLastElement) document.getElementById("section_" + index).setAttribute("class", "section section-visible");;
+//         hightlightField(index + 1);
+//     }
+// }
+
+// function hightlightField(index) {
+//     document.getElementById("section_" + index + "input").addEventListener("input", () => {
+//         document.getElementById("section_" + index).setAttribute("class", "section section-visible");
+//     })
+// }
+
